@@ -1,0 +1,114 @@
+import type { Dict } from './en';
+
+/**
+ * Typing this as `Dict` is the enforcement mechanism: add a key to en.ts and
+ * this file fails to compile until it is translated.
+ */
+export const zh: Dict = {
+  brandMark: '交谈话题',
+  brandLine: '抽个话题，开口就说。',
+
+  modeOffTheCuff: '即兴开讲',
+  modeDeepResearch: '深度研究',
+  modeOffTheCuffBlurb: '几乎不用准备，练的就是临场反应。',
+  modeDeepResearchBlurb: '先抽题，再设一个查资料的计时器，准备好了就开始演讲计时。',
+  modeLabel: '练习模式',
+
+  regionLabel: '地区',
+  regionEnglish: 'English',
+  regionSingapore: 'Singapore',
+  regionChina: '中文',
+
+  reelReady: '准备好了',
+  reelDrawing: '抽取中…',
+  reelYourTopic: '你的话题',
+  reelPlaceholder: '开始吧？',
+
+  spin: '抽话题',
+  spinAgain: '再抽一次',
+  spinning: '抽取中…',
+  close: '关闭',
+  done: '完成',
+  doneResearching: '资料查完了',
+  readyToSpeak: '我准备好了',
+  categoryLabel: '话题分类',
+
+  timerResearch: '查资料。',
+  timerReady: '准备完毕。',
+  timerSpeak: '开讲。',
+  timerDone: '时间到。',
+  timerPhaseResearching: '查资料中',
+  ariaResearchTimer: '查资料计时',
+  ariaReadyToSpeak: '准备开讲',
+  ariaSpeechTimer: '演讲计时',
+  stageWhat: '是什么？',
+  stageSoWhat: '所以呢？',
+  stageNowWhat: '然后呢？',
+
+  settings: '设置',
+  settingsBlurb: '计时长度以整分钟为单位。',
+  settingsOpen: '打开设置',
+  tabTimers: '计时',
+  tabTopics: '话题库',
+  speech: '演讲',
+  research: '查资料',
+  researchHint: '仅深度研究模式',
+  muteSound: '静音',
+  savedForNextTime: '已保存，下次继续用。',
+
+  topicsBlurb: '添加、删除或上传你自己的话题。所有内容只保存在这个浏览器里。',
+  bucketBase: '通用（所有地区）',
+  bucketSingapore: '仅新加坡',
+  bucketChina: '仅中文',
+  addTopic: '添加话题',
+  filterTopics: '搜索话题…',
+  deleteTopic: '删除',
+  undo: '撤销',
+  saving: '保存中…',
+  saved: '已保存',
+  saveFailed: '保存失败',
+  emptyFilter: '没有匹配的话题。',
+  backToCategories: '所有分类',
+  bothLanguagesRequired: '通用话题需要同时填写英文和中文。',
+
+  importTitle: '上传话题表',
+  importBlurb:
+    '支持 CSV、Excel 或纯文本文件。表头可以用 category、en、zh、region 这几列，全部可选；直接给一列词也可以。',
+  importChoose: '选择文件',
+  importDrop: '或拖到这里',
+  importReading: '读取中…',
+  importTemplate: '下载模板',
+  importFallback: '未分类的话题放入',
+  importPreviewTitle: '准备导入',
+  importCancel: '取消',
+  importMerge: '添加到我的话题库',
+  importReplace: '全部替换',
+  importProblems: '这个文件有问题',
+  exportJson: '导出 JSON',
+  exportCsv: '导出 CSV',
+  resetDefaults: '恢复原始话题',
+  resetConfirm: '删除你自己的话题并恢复原始内容？此操作无法撤销。',
+
+
+  creditBy: '由 Jinininn 制作',
+  creditOriginal: '灵感来自 unprompted.cool',
+
+  errorTitle: '出了点问题',
+  errorBody: '刷新页面就能继续练习，你的计时设置还在。',
+  errorRetry: '重试',
+
+  duration: (minutes, seconds) =>
+    minutes === 0 ? `${seconds} 秒` : seconds === 0 ? `${minutes} 分钟` : `${minutes} 分 ${seconds} 秒`,
+  startTimer: (label) => `开始 ${label} 计时`,
+  startResearch: (label) => `开始 ${label} 查资料`,
+  upNext: (label) => `接下来：${label} 演讲。`,
+  announceTopic: (topic) => `你的话题：${topic}`,
+  topicCount: (n) => `${n} 个话题`,
+  importSummary: (topics, categories) => `${categories} 个分类，共 ${topics} 个话题。`,
+  importDuplicateNote: (n) => `其中 ${n} 个已在你的话题库里，将会跳过。`,
+  importMirroredNote: (n) =>
+    `其中 ${n} 个只有一种语言，另一种会沿用同样的文字，这样在每个地区都能出现。`,
+  importNewCategoryNote: (n) => `将新建 ${n} 个分类。`,
+  importBankFile: (n) => `这是一个完整的话题库，包含 ${n} 个分类。导入后会替换你现在的话题库。`,
+  importDone: (n) => `已添加 ${n} 个话题。`,
+};

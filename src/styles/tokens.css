@@ -1,0 +1,43 @@
+/* Design tokens — ported verbatim from the original's computed styles.
+   Latin glyphs resolve to Fraunces/Outfit exactly as the original; the CJK
+   families are appended purely as fallbacks so Chinese text never tofus. */
+:root {
+  --font-display: "Fraunces", "Songti SC", "Noto Serif SC", "Iowan Old Style", Georgia, serif;
+  --font-body: "Outfit", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Avenir Next",
+    "Segoe UI", sans-serif;
+
+  /* Gold on deep navy. Cream text rather than pure white — white against navy
+     reads cold and cheap, cream keeps the gold looking like metal. */
+  --ink: #f4e8d6;
+  --muted: #f4e8d6ad;
+  --accent: #c8a24c; /* antique gold */
+  --accent-bright: #e6cd8f; /* champagne, for hover and focus */
+  --research: #8fd0f5; /* ice blue — must stay legible against the navy field */
+
+  --surface: #141c33; /* raised panels */
+  --page: #0b1226; /* deep navy */
+  --on-accent: #12172b; /* text on gold */
+
+  --scroll-track: #0b1226;
+  --scroll-thumb: #f4e8d638;
+  --scroll-thumb-hover: #c8a24c8c;
+
+  /* The original's signature easing — used for essentially every transition. */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  color: var(--ink);
+  color-scheme: dark;
+  font-family: var(--font-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Registering --p lets the conic-gradient ring interpolate smoothly.
+   Without this the progress ring visibly steps instead of sweeping. */
+@property --p {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}

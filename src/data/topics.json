@@ -1,0 +1,1493 @@
+[
+  {
+    "id": "general",
+    "emoji": "✦",
+    "label": {
+      "en": "General",
+      "zh": "日常"
+    },
+    "base": [
+      {
+        "en": "Nostalgia",
+        "zh": "怀旧"
+      },
+      {
+        "en": "Comfort Zone",
+        "zh": "舒适区"
+      },
+      {
+        "en": "Muscle Memory",
+        "zh": "肌肉记忆"
+      },
+      {
+        "en": "Commute",
+        "zh": "通勤"
+      },
+      {
+        "en": "Spam Call",
+        "zh": "骚扰电话"
+      },
+      {
+        "en": "Voicemail",
+        "zh": "语音信箱"
+      },
+      {
+        "en": "Doorbell",
+        "zh": "门铃"
+      },
+      {
+        "en": "Hand-Me-Down",
+        "zh": "二手旧物"
+      },
+      {
+        "en": "Bookshelf",
+        "zh": "书架"
+      },
+      {
+        "en": "Junk Drawer",
+        "zh": "杂物抽屉"
+      },
+      {
+        "en": "Brainrot",
+        "zh": "脑腐"
+      },
+      {
+        "en": "Corporate greed",
+        "zh": "企业贪婪"
+      },
+      {
+        "en": "Mirrors",
+        "zh": "镜子"
+      },
+      {
+        "en": "Waiting Room",
+        "zh": "候诊室"
+      },
+      {
+        "en": "Autocorrect",
+        "zh": "自动纠错"
+      },
+      {
+        "en": "Group Chat",
+        "zh": "群聊"
+      },
+      {
+        "en": "Leftovers",
+        "zh": "剩菜"
+      },
+      {
+        "en": "Traffic Light",
+        "zh": "红绿灯"
+      }
+    ],
+    "extra": {
+      "singapore": [
+        "Kiasu",
+        "Chope seat with tissue",
+        "Void deck",
+        "HDB corridor",
+        "Hawker centre queue",
+        "CMIO",
+        "NS reservist",
+        "PSLE stress",
+        "COE",
+        "GST vouchers",
+        "MRT peak hour",
+        "Sengkang / Punggol",
+        "Orchard Road Christmas",
+        "Wet market",
+        "Kopitiam"
+      ],
+      "china": [
+        "拼多多砍一刀",
+        "朋友圈三天可见",
+        "拼车",
+        "催婚",
+        "内卷",
+        "断亲",
+        "社死",
+        "丁克",
+        "烂尾楼",
+        "扫码点餐",
+        "刷短视频",
+        "薅羊毛",
+        "房奴",
+        "鸡娃",
+        "直播带货"
+      ]
+    }
+  },
+  {
+    "id": "deep-research",
+    "emoji": "🔎",
+    "label": {
+      "en": "Deep Research",
+      "zh": "深度研究"
+    },
+    "base": [
+      {
+        "en": "The Ben Franklin effect",
+        "zh": "富兰克林效应"
+      },
+      {
+        "en": "The illusion of transparency",
+        "zh": "透明幻觉"
+      },
+      {
+        "en": "Affective forecasting (impact bias)",
+        "zh": "情感预测（影响偏差）"
+      },
+      {
+        "en": "The focusing illusion",
+        "zh": "聚焦错觉"
+      },
+      {
+        "en": "The end-of-history illusion",
+        "zh": "历史终结错觉"
+      },
+      {
+        "en": "Ironic process theory",
+        "zh": "白熊效应/反弹"
+      },
+      {
+        "en": "Affect labeling",
+        "zh": "情绪标注"
+      },
+      {
+        "en": "Schelling points",
+        "zh": "谢林点"
+      },
+      {
+        "en": "Tit-for-tat (and why nice strategies win)",
+        "zh": "以牙还牙（友善策略胜）"
+      },
+      {
+        "en": "The war of attrition",
+        "zh": "消耗战"
+      },
+      {
+        "en": "Costly signaling",
+        "zh": "昂贵信号"
+      },
+      {
+        "en": "The volunteer's dilemma",
+        "zh": "志愿者困境"
+      },
+      {
+        "en": "The stag hunt",
+        "zh": "猎鹿博弈"
+      },
+      {
+        "en": "The ostrich effect",
+        "zh": "鸵鸟效应"
+      },
+      {
+        "en": "The house money effect",
+        "zh": "赌场资金效应"
+      },
+      {
+        "en": "The compromise effect",
+        "zh": "折中效应"
+      },
+      {
+        "en": "The denomination effect",
+        "zh": "面额效应"
+      },
+      {
+        "en": "The prosecutor's fallacy",
+        "zh": "检察官谬误"
+      },
+      {
+        "en": "Simpson's paradox",
+        "zh": "辛普森悖论"
+      },
+      {
+        "en": "Berkson's paradox",
+        "zh": "伯克森悖论"
+      },
+      {
+        "en": "The law of small numbers",
+        "zh": "小数定律"
+      },
+      {
+        "en": "The false positive paradox",
+        "zh": "假阳性悖论"
+      },
+      {
+        "en": "The Lindy effect",
+        "zh": "林迪效应"
+      },
+      {
+        "en": "The Paradox of Choice",
+        "zh": "选择悖论"
+      },
+      {
+        "en": "Fundamental attribution error",
+        "zh": "基本归因谬误"
+      }
+    ],
+    "extra": {
+      "singapore": [
+        "Meritocracy debate",
+        "Kiasu-ism as behavioural economics",
+        "Sandwich class",
+        "Race CMIO model",
+        "Pragmatism as national ideology",
+        "Asian values vs Western liberalism",
+        "Safe space vs free speech in SG",
+        "Public housing as social engineering",
+        "National service as social glue",
+        "5 Cs (Cash, Car, Credit Card, Condo, Country Club)",
+        "Foreign talent debate",
+        "Elderly in ageing society",
+        "Garden City ideology",
+        "Multiracialism"
+      ],
+      "china": [
+        "中庸之道",
+        "田忌赛马",
+        "塞翁失马",
+        "破窗效应",
+        "面子文化",
+        "关系学",
+        "酒桌文化",
+        "剩女标签",
+        "虎妈教育",
+        "集体主义与个人主义",
+        "差序格局",
+        "无为而治",
+        "阴阳平衡",
+        "人情社会",
+        "熟人信任",
+        "学历倒挂"
+      ]
+    }
+  },
+  {
+    "id": "personal-finance",
+    "emoji": "💰",
+    "label": {
+      "en": "Personal finance",
+      "zh": "个人理财"
+    },
+    "base": [
+      {
+        "en": "Emergency fund",
+        "zh": "应急基金"
+      },
+      {
+        "en": "Compound interest",
+        "zh": "复利"
+      },
+      {
+        "en": "Lifestyle creep",
+        "zh": "消费升级"
+      },
+      {
+        "en": "Sunk cost",
+        "zh": "沉没成本"
+      },
+      {
+        "en": "Opportunity cost",
+        "zh": "机会成本"
+      },
+      {
+        "en": "Net worth",
+        "zh": "净资产"
+      },
+      {
+        "en": "Cash flow",
+        "zh": "现金流"
+      },
+      {
+        "en": "High-interest debt",
+        "zh": "高息债务"
+      },
+      {
+        "en": "Rainy day",
+        "zh": "不时之需"
+      },
+      {
+        "en": "Diversification",
+        "zh": "分散投资"
+      },
+      {
+        "en": "Dollar-cost averaging",
+        "zh": "定投"
+      },
+      {
+        "en": "Liquidity",
+        "zh": "流动性"
+      },
+      {
+        "en": "Burn rate",
+        "zh": "烧钱率"
+      },
+      {
+        "en": "Safety net",
+        "zh": "安全网"
+      },
+      {
+        "en": "Credit score",
+        "zh": "信用评分"
+      },
+      {
+        "en": "Time value of money",
+        "zh": "货币时间价值"
+      },
+      {
+        "en": "Risk tolerance",
+        "zh": "风险承受力"
+      },
+      {
+        "en": "Idle cash",
+        "zh": "闲置现金"
+      },
+      {
+        "en": "Subscription trap",
+        "zh": "订阅陷阱"
+      },
+      {
+        "en": "Financial runway",
+        "zh": "财务跑道"
+      },
+      {
+        "en": "Delayed gratification",
+        "zh": "延迟满足"
+      }
+    ],
+    "extra": {
+      "singapore": [
+        "CPF",
+        "HDB upgrading",
+        "BTO vs resale",
+        "Singapore Savings Bonds",
+        "High COE prices",
+        "Wealth management in SG",
+        "Retirement adequacy",
+        "MediSave",
+        "SRS",
+        "Investment property",
+        "Car as liability",
+        "GST hike",
+        "Insurance premiums",
+        "Emergency cash in SGD"
+      ],
+      "china": [
+        "余额宝",
+        "房贷",
+        "六个钱包",
+        "消费降级",
+        "家庭资产配置",
+        "以房养老",
+        "医保余额",
+        "公积金",
+        "信用贷",
+        "花呗分期",
+        "宝宝理财",
+        "中年财务危机",
+        "养老焦虑",
+        "彩礼",
+        "拼单凑单"
+      ]
+    }
+  },
+  {
+    "id": "entrepreneurship",
+    "emoji": "🚀",
+    "label": {
+      "en": "Entrepreneurship",
+      "zh": "创业"
+    },
+    "base": [
+      {
+        "en": "Skin in the game",
+        "zh": "利益绑定"
+      },
+      {
+        "en": "First customer",
+        "zh": "第一个客户"
+      },
+      {
+        "en": "Cash is oxygen",
+        "zh": "现金是氧气"
+      },
+      {
+        "en": "Founder mode",
+        "zh": "创始人模式"
+      },
+      {
+        "en": "Saying no",
+        "zh": "学会拒绝"
+      },
+      {
+        "en": "Distribution",
+        "zh": "渠道分发"
+      },
+      {
+        "en": "Unit economics",
+        "zh": "单位经济"
+      },
+      {
+        "en": "Moat",
+        "zh": "护城河"
+      },
+      {
+        "en": "Bootstrapping",
+        "zh": "自筹资金"
+      },
+      {
+        "en": "Product-market fit",
+        "zh": "产品市场匹配"
+      },
+      {
+        "en": "Reputation capital",
+        "zh": "声誉资本"
+      },
+      {
+        "en": "Sweat equity",
+        "zh": "血汗股权"
+      },
+      {
+        "en": "Hustle vs leverage",
+        "zh": "苦干 vs 杠杆"
+      },
+      {
+        "en": "Solo founder",
+        "zh": "单人创始人"
+      },
+      {
+        "en": "Building in public",
+        "zh": "公开构建"
+      },
+      {
+        "en": "Fail fast",
+        "zh": "快速失败"
+      },
+      {
+        "en": "Customer obsession",
+        "zh": "用户至上"
+      },
+      {
+        "en": "Pivoting",
+        "zh": "转型"
+      },
+      {
+        "en": "Trust as currency",
+        "zh": "信任即货币"
+      },
+      {
+        "en": "Overnight success myth",
+        "zh": "一夜成名神话"
+      },
+      {
+        "en": "Side hustle ceiling",
+        "zh": "副业天花板"
+      },
+      {
+        "en": "Ship imperfect",
+        "zh": "先做再完美"
+      }
+    ],
+    "extra": {
+      "singapore": [
+        "Grab a Grab",
+        "Unicorn dreams in small market",
+        "EDG grants",
+        "Tech in shape",
+        "Regionalising from SG",
+        "Smart Nation",
+        "Startup SG",
+        "Co-working spaces",
+        "Hiring local talent",
+        "Government grants",
+        "Steep learning curve",
+        "Small domestic market",
+        "Regional HQ"
+      ],
+      "china": [
+        "内卷",
+        "私域流量",
+        "下沉市场",
+        "卷王",
+        "996",
+        "大厂",
+        "35岁危机",
+        "OKR",
+        "KPI",
+        "融资",
+        "天使轮",
+        "A轮",
+        "PPT创业",
+        "风口",
+        "猪都能飞",
+        "互联网思维",
+        "闭环"
+      ]
+    }
+  },
+  {
+    "id": "startups",
+    "emoji": "🌱",
+    "label": {
+      "en": "Startups",
+      "zh": "初创"
+    },
+    "base": [
+      {
+        "en": "Minimum viable product",
+        "zh": "最小可行产品"
+      },
+      {
+        "en": "Runway",
+        "zh": "跑道"
+      },
+      {
+        "en": "Seed round",
+        "zh": "种子轮"
+      },
+      {
+        "en": "Growth hacking",
+        "zh": "增长黑客"
+      },
+      {
+        "en": "Churn",
+        "zh": "流失率"
+      },
+      {
+        "en": "Network effects",
+        "zh": "网络效应"
+      },
+      {
+        "en": "Burn rate",
+        "zh": "烧钱率"
+      },
+      {
+        "en": "Traction",
+        "zh": "用户牵引力"
+      },
+      {
+        "en": "Pivot",
+        "zh": "转型"
+      },
+      {
+        "en": "Founder-market fit",
+        "zh": "创始人-市场匹配"
+      },
+      {
+        "en": "Beachhead market",
+        "zh": "滩头市场"
+      },
+      {
+        "en": "Viral loop",
+        "zh": "病毒循环"
+      },
+      {
+        "en": "Demo day",
+        "zh": "演示日"
+      },
+      {
+        "en": "Product debt",
+        "zh": "产品债务"
+      },
+      {
+        "en": "Early adopters",
+        "zh": "早期用户"
+      },
+      {
+        "en": "Scaling prematurely",
+        "zh": "过早扩张"
+      },
+      {
+        "en": "Acqui-hire",
+        "zh": "收购式招聘"
+      },
+      {
+        "en": "Moonshot",
+        "zh": "登月计划"
+      },
+      {
+        "en": "Zero to one",
+        "zh": "从0到1"
+      }
+    ],
+    "extra": {
+      "singapore": [
+        "SEA Ltd",
+        "Super app ambition",
+        "Regional expansion",
+        "Fintech sandbox",
+        "AI adoption in SMEs",
+        "Smart City innovations",
+        "E-commerce logistics",
+        "Digital banking",
+        "E-wallets",
+        "Localized product",
+        "Government-linked corporate",
+        "Ecosystem builders"
+      ],
+      "china": [
+        "产业互联网",
+        "硬科技",
+        "下沉市场",
+        "私域",
+        "快鱼吃慢鱼",
+        "融资难",
+        "独角兽",
+        "BAT",
+        "TMD",
+        "共享经济",
+        "P2P爆雷",
+        "社区团购",
+        "直播电商",
+        "风口论",
+        "生态化反"
+      ]
+    }
+  },
+  {
+    "id": "tech-ai",
+    "emoji": "🤖",
+    "label": {
+      "en": "Tech / AI",
+      "zh": "科技 / AI"
+    },
+    "base": [
+      {
+        "en": "Black box",
+        "zh": "黑箱"
+      },
+      {
+        "en": "Training data",
+        "zh": "训练数据"
+      },
+      {
+        "en": "Prompt engineering",
+        "zh": "提示工程"
+      },
+      {
+        "en": "Hallucination",
+        "zh": "幻觉"
+      },
+      {
+        "en": "Model drift",
+        "zh": "模型漂移"
+      },
+      {
+        "en": "Latency",
+        "zh": "延迟"
+      },
+      {
+        "en": "API call",
+        "zh": "API调用"
+      },
+      {
+        "en": "Open source",
+        "zh": "开源"
+      },
+      {
+        "en": "Fine-tuning",
+        "zh": "微调"
+      },
+      {
+        "en": "Context window",
+        "zh": "上下文窗口"
+      },
+      {
+        "en": "Automation bias",
+        "zh": "自动化偏见"
+      },
+      {
+        "en": "Data moat",
+        "zh": "数据护城河"
+      },
+      {
+        "en": "Edge case",
+        "zh": "边缘案例"
+      },
+      {
+        "en": "Tech debt",
+        "zh": "技术债务"
+      },
+      {
+        "en": "Single point of failure",
+        "zh": "单点故障"
+      },
+      {
+        "en": "Cloud vs local",
+        "zh": "云端 vs 本地"
+      },
+      {
+        "en": "Inference cost",
+        "zh": "推理成本"
+      },
+      {
+        "en": "Synthetic data",
+        "zh": "合成数据"
+      },
+      {
+        "en": "Feedback loop",
+        "zh": "反馈循环"
+      },
+      {
+        "en": "Zero-shot",
+        "zh": "零样本"
+      },
+      {
+        "en": "Attention mechanism",
+        "zh": "注意力机制"
+      },
+      {
+        "en": "Agentic workflow",
+        "zh": "智能体工作流"
+      }
+    ],
+    "extra": {
+      "singapore": [
+        "Smart Nation sensors",
+        "AI for public good",
+        "Digital government",
+        "Data privacy laws",
+        "Cybersecurity in SG",
+        "5G rollout",
+        "Fintech AI",
+        "Edge AI",
+        "Autonomous vehicles trials",
+        "AI ethics in Asia",
+        "Local tech talent",
+        "Remote work tech"
+      ],
+      "china": [
+        "国产大模型",
+        "算法备案",
+        "数据安全法",
+        "AI换脸",
+        "人脸识别",
+        "智慧城市",
+        "5G应用",
+        "芯片卡脖子",
+        "量化交易",
+        "Python入门",
+        "互联网大厂裁员",
+        "数字孪生",
+        "AI绘画",
+        "自动驾驶",
+        "机器人替代"
+      ]
+    }
+  },
+  {
+    "id": "fitness",
+    "emoji": "💪",
+    "label": {
+      "en": "Fitness",
+      "zh": "健身"
+    },
+    "base": [
+      {
+        "en": "Progressive overload",
+        "zh": "渐进超负荷"
+      },
+      {
+        "en": "Rest day",
+        "zh": "休息日"
+      },
+      {
+        "en": "Muscle memory",
+        "zh": "肌肉记忆"
+      },
+      {
+        "en": "Form over ego",
+        "zh": "动作优先"
+      },
+      {
+        "en": "Plateau",
+        "zh": "平台期"
+      },
+      {
+        "en": "Warm-up",
+        "zh": "热身"
+      },
+      {
+        "en": "Consistency beats intensity",
+        "zh": "坚持胜于强度"
+      },
+      {
+        "en": "Deload week",
+        "zh": "减载周"
+      },
+      {
+        "en": "Range of motion",
+        "zh": "活动范围"
+      },
+      {
+        "en": "Recovery debt",
+        "zh": "恢复赤字"
+      },
+      {
+        "en": "Personal record",
+        "zh": "个人记录"
+      },
+      {
+        "en": "Body composition",
+        "zh": "身体成分"
+      },
+      {
+        "en": "Cardio base",
+        "zh": "有氧基础"
+      },
+      {
+        "en": "Mobility",
+        "zh": "活动度"
+      },
+      {
+        "en": "Soreness as signal",
+        "zh": "酸痛即信号"
+      },
+      {
+        "en": "Showing up",
+        "zh": "到场"
+      },
+      {
+        "en": "Breathing under load",
+        "zh": "负重呼吸"
+      },
+      {
+        "en": "Mind-muscle connection",
+        "zh": "念动一致"
+      },
+      {
+        "en": "Volume vs intensity",
+        "zh": "容量 vs 强度"
+      },
+      {
+        "en": "Habit stacking",
+        "zh": "习惯叠加"
+      },
+      {
+        "en": "Gym intimidation",
+        "zh": "健身社交恐惧"
+      },
+      {
+        "en": "Maintenance phase",
+        "zh": "维持期"
+      },
+      {
+        "en": "Functional strength",
+        "zh": "功能性力量"
+      },
+      {
+        "en": "Sleep as training",
+        "zh": "睡眠即训练"
+      },
+      {
+        "en": "Accountability partner",
+        "zh": "训练搭子"
+      },
+      {
+        "en": "Beginner gains",
+        "zh": "新手红利"
+      },
+      {
+        "en": "Long-term athlete",
+        "zh": "长期运动员心态"
+      }
+    ],
+    "extra": {
+      "singapore": [
+        "Hawker food guilt",
+        "Kopi-o kosong",
+        "ActiveSG",
+        "Humidity as excuse",
+        "NSC gym",
+        "Park connector",
+        "Pulau Ubin bike",
+        "Stand-up paddle",
+        "Yoga in Botanic Gardens",
+        "Swimming at public pool",
+        "Seasonal running events",
+        "2.4km IPPT",
+        "Calisthenics at stadium"
+      ],
+      "china": [
+        "广场舞",
+        "瑜伽课",
+        "跑步打卡",
+        "健身房私教",
+        "帕梅拉",
+        "刘畊宏女孩",
+        "体测焦虑",
+        "中医养生",
+        "八段锦",
+        "夜跑",
+        "动感单车",
+        "马甲线",
+        "减脂餐",
+        "轻断食",
+        "Keep App"
+      ]
+    }
+  },
+  {
+    "id": "nutrition",
+    "emoji": "🥗",
+    "label": {
+      "en": "Nutrition",
+      "zh": "营养"
+    },
+    "base": [
+      {
+        "en": "Empty calories",
+        "zh": "空热量"
+      },
+      {
+        "en": "Protein",
+        "zh": "蛋白质"
+      },
+      {
+        "en": "Hydration",
+        "zh": "补水"
+      },
+      {
+        "en": "Meal prep",
+        "zh": "备餐"
+      },
+      {
+        "en": "Craving vs hunger",
+        "zh": "嘴馋 vs 饥饿"
+      },
+      {
+        "en": "Micronutrients",
+        "zh": "微量营养素"
+      },
+      {
+        "en": "Fiber",
+        "zh": "膳食纤维"
+      },
+      {
+        "en": "Blood sugar spike",
+        "zh": "血糖飙升"
+      },
+      {
+        "en": "Mindful eating",
+        "zh": "正念饮食"
+      },
+      {
+        "en": "Whole foods",
+        "zh": "天然食材"
+      },
+      {
+        "en": "Gut health",
+        "zh": "肠道健康"
+      },
+      {
+        "en": "Cheat meals",
+        "zh": "欺骗餐"
+      },
+      {
+        "en": "Emotional eating",
+        "zh": "情绪化进食"
+      },
+      {
+        "en": "Sustainable deficit",
+        "zh": "可持续热量缺口"
+      },
+      {
+        "en": "Breakfast ritual",
+        "zh": "早餐仪式"
+      },
+      {
+        "en": "Late-night snack",
+        "zh": "宵夜"
+      },
+      {
+        "en": "Ultra-processed",
+        "zh": "超加工食品"
+      },
+      {
+        "en": "Eating enough",
+        "zh": "吃饱"
+      },
+      {
+        "en": "Color on the plate",
+        "zh": "餐盘色彩"
+      },
+      {
+        "en": "Social eating",
+        "zh": "社交聚餐"
+      },
+      {
+        "en": "Meal timing",
+        "zh": "进食时间"
+      },
+      {
+        "en": "Supplements",
+        "zh": "补剂"
+      },
+      {
+        "en": "Home cooking",
+        "zh": "家常菜"
+      },
+      {
+        "en": "Energy availability",
+        "zh": "能量供给"
+      }
+    ],
+    "extra": {
+      "singapore": [
+        "Cai png economics",
+        "Kopi with condensed milk",
+        "Hawker carrot cake",
+        "Prata / fast food guilt",
+        "Fruit juice sugar",
+        "Atas salad bowl",
+        "NTUC fresh veg",
+        "Rice vs cauliflower rice",
+        "Milo dinosaur",
+        "Ice kachang",
+        "Local superfoods (kangkong, papaya)",
+        "Alcohol at hawker centre",
+        "Tze char portions"
+      ],
+      "china": [
+        "外卖",
+        "奶茶",
+        "无糖饮料",
+        "养生壶",
+        "保温杯泡枸杞",
+        "轻食",
+        "代餐",
+        "断碳水",
+        "季节性水果",
+        "火锅文化",
+        "烧烤",
+        "腌菜",
+        "中餐油盐",
+        "食疗",
+        "老火靓汤"
+      ]
+    }
+  },
+  {
+    "id": "productivity",
+    "emoji": "⚡",
+    "label": {
+      "en": "Productivity",
+      "zh": "生产力"
+    },
+    "base": [
+      {
+        "en": "Deep work",
+        "zh": "深度工作"
+      },
+      {
+        "en": "Context switching",
+        "zh": "情境切换"
+      },
+      {
+        "en": "Inbox zero",
+        "zh": "收件箱清零"
+      },
+      {
+        "en": "Time boxing",
+        "zh": "时间盒"
+      },
+      {
+        "en": "Parkinson's law",
+        "zh": "帕金森定律"
+      },
+      {
+        "en": "Two-minute rule",
+        "zh": "两分钟法则"
+      },
+      {
+        "en": "Batching",
+        "zh": "批量处理"
+      },
+      {
+        "en": "Energy management",
+        "zh": "能量管理"
+      },
+      {
+        "en": "Done is better",
+        "zh": "完成胜过完美"
+      },
+      {
+        "en": "Open loops",
+        "zh": "未闭环事项"
+      },
+      {
+        "en": "Focus mode",
+        "zh": "专注模式"
+      },
+      {
+        "en": "Meeting tax",
+        "zh": "会议税"
+      },
+      {
+        "en": "Single-tasking",
+        "zh": "单任务"
+      },
+      {
+        "en": "Morning pages",
+        "zh": "晨间笔记"
+      },
+      {
+        "en": "Shutdown ritual",
+        "zh": "下班仪式"
+      },
+      {
+        "en": "Second brain",
+        "zh": "第二大脑"
+      },
+      {
+        "en": "Procrastination",
+        "zh": "拖延症"
+      },
+      {
+        "en": "Friction removal",
+        "zh": "消除阻力"
+      },
+      {
+        "en": "Attention residue",
+        "zh": "注意力残留"
+      },
+      {
+        "en": "Protected hours",
+        "zh": "受保护时间"
+      },
+      {
+        "en": "Output over hours",
+        "zh": "产出重于时长"
+      },
+      {
+        "en": "Distraction diet",
+        "zh": "分心饮食"
+      }
+    ],
+    "extra": {
+      "singapore": [
+        "Kiasu culture at work",
+        "Bell curve ranking",
+        "Reservist disruption",
+        "PIP",
+        "Hybrid work debates",
+        "Zoom fatigue",
+        "Return-to-office",
+        "Quiet quitting (SG context)",
+        "Chope good seats",
+        "Lunch queue rush",
+        "SG public holiday",
+        "Productivity with GrabFood",
+        "Side hustle in SG"
+      ],
+      "china": [
+        "摸鱼",
+        "划水",
+        "PUA",
+        "汇报文化",
+        "日报周报",
+        "加班文化",
+        "弹性工作",
+        "带薪休假",
+        "团建",
+        "职场内耗",
+        "OKR",
+        "KPI",
+        "背锅侠",
+        "飞书 / 钉钉",
+        "居家办公"
+      ]
+    }
+  },
+  {
+    "id": "history",
+    "emoji": "📜",
+    "label": {
+      "en": "History",
+      "zh": "历史"
+    },
+    "base": [
+      {
+        "en": "Fall of the Berlin Wall",
+        "zh": "柏林墙倒塌"
+      },
+      {
+        "en": "Moon landing",
+        "zh": "登月"
+      },
+      {
+        "en": "Invention of the printing press",
+        "zh": "印刷术发明"
+      },
+      {
+        "en": "Signing of the Magna Carta",
+        "zh": "大宪章签署"
+      },
+      {
+        "en": "Storming of the Bastille",
+        "zh": "攻占巴士底狱"
+      },
+      {
+        "en": "First Olympic Games",
+        "zh": "第一届奥运会"
+      },
+      {
+        "en": "Discovery of penicillin",
+        "zh": "青霉素发现"
+      },
+      {
+        "en": "Wright brothers' first flight",
+        "zh": "莱特兄弟首飞"
+      },
+      {
+        "en": "Fall of Constantinople",
+        "zh": "君士坦丁堡陷落"
+      },
+      {
+        "en": "Boston Tea Party",
+        "zh": "波士顿倾茶事件"
+      },
+      {
+        "en": "March on Washington",
+        "zh": "华盛顿大游行"
+      },
+      {
+        "en": "Opening of the Silk Road",
+        "zh": "丝绸之路开通"
+      },
+      {
+        "en": "Chernobyl disaster",
+        "zh": "切尔诺贝利事故"
+      },
+      {
+        "en": "Completion of the Great Wall",
+        "zh": "长城建成"
+      },
+      {
+        "en": "Treaty of Versailles",
+        "zh": "凡尔赛条约"
+      },
+      {
+        "en": "First photograph",
+        "zh": "第一张照片"
+      },
+      {
+        "en": "Suez Canal opening",
+        "zh": "苏伊士运河通航"
+      },
+      {
+        "en": "Abolition of slavery in Britain",
+        "zh": "英国废除奴隶制"
+      },
+      {
+        "en": "Launch of Sputnik",
+        "zh": "斯普特尼克号发射"
+      },
+      {
+        "en": "Renaissance in Florence",
+        "zh": "佛罗伦萨文艺复兴"
+      },
+      {
+        "en": "Stock market crash of 1929",
+        "zh": "1929年股市崩盘"
+      },
+      {
+        "en": "Nelson Mandela's release",
+        "zh": "曼德拉获释"
+      },
+      {
+        "en": "Building of the pyramids",
+        "zh": "金字塔建造"
+      },
+      {
+        "en": "First women's suffrage victory",
+        "zh": "首次妇女选举权胜利"
+      },
+      {
+        "en": "Atomic bomb on Hiroshima",
+        "zh": "广岛原子弹爆炸"
+      },
+      {
+        "en": "Voyages of Zheng He",
+        "zh": "郑和下西洋"
+      },
+      {
+        "en": "Fall of the Roman Empire",
+        "zh": "罗马帝国灭亡"
+      },
+      {
+        "en": "Invention of the internet",
+        "zh": "互联网发明"
+      }
+    ],
+    "extra": {
+      "singapore": [
+        "Independence from Malaysia (1965)",
+        "Singapore merger with Malaysia",
+        "Operation Coldstore",
+        "National Service introduction",
+        "First MRT line",
+        "Asian Financial Crisis 1997",
+        "SARS outbreak 2003",
+        "Opening of Changi Airport",
+        "Jurong industrial estate",
+        "Housing boom",
+        "Independence Day 9 Aug",
+        "Lee Kuan Yew's vision",
+        "Singapore's 50th birthday SG50"
+      ],
+      "china": [
+        "鸦片战争",
+        "辛亥革命",
+        "新中国成立",
+        "改革开放",
+        "抗美援朝",
+        "两弹一星",
+        "文化大革命",
+        "恢复高考",
+        "香港回归",
+        "加入WTO",
+        "汶川地震",
+        "北京奥运",
+        "脱贫攻坚",
+        "撤侨",
+        "南水北调"
+      ]
+    }
+  },
+  {
+    "id": "literature",
+    "emoji": "📚",
+    "label": {
+      "en": "Literature",
+      "zh": "文学"
+    },
+    "base": [
+      {
+        "en": "1984",
+        "zh": "1984"
+      },
+      {
+        "en": "Moby-Dick",
+        "zh": "白鲸"
+      },
+      {
+        "en": "Pride and Prejudice",
+        "zh": "傲慢与偏见"
+      },
+      {
+        "en": "One Hundred Years of Solitude",
+        "zh": "百年孤独"
+      },
+      {
+        "en": "The Great Gatsby",
+        "zh": "了不起的盖茨比"
+      },
+      {
+        "en": "Crime and Punishment",
+        "zh": "罪与罚"
+      },
+      {
+        "en": "To Kill a Mockingbird",
+        "zh": "杀死一只知更鸟"
+      },
+      {
+        "en": "Brave New World",
+        "zh": "美丽新世界"
+      },
+      {
+        "en": "The Odyssey",
+        "zh": "奥德赛"
+      },
+      {
+        "en": "Frankenstein",
+        "zh": "弗兰肯斯坦"
+      },
+      {
+        "en": "Don Quixote",
+        "zh": "堂吉诃德"
+      },
+      {
+        "en": "Beloved",
+        "zh": "宠儿"
+      },
+      {
+        "en": "The Catcher in the Rye",
+        "zh": "麦田里的守望者"
+      },
+      {
+        "en": "War and Peace",
+        "zh": "战争与和平"
+      },
+      {
+        "en": "Slaughterhouse-Five",
+        "zh": "五号屠场"
+      },
+      {
+        "en": "Ernest Hemingway",
+        "zh": "海明威"
+      },
+      {
+        "en": "Franz Kafka",
+        "zh": "卡夫卡"
+      },
+      {
+        "en": "Fyodor Dostoevsky",
+        "zh": "陀思妥耶夫斯基"
+      },
+      {
+        "en": "Edgar Allan Poe",
+        "zh": "爱伦·坡"
+      },
+      {
+        "en": "James Joyce",
+        "zh": "乔伊斯"
+      },
+      {
+        "en": "Emily Dickinson",
+        "zh": "狄金森"
+      },
+      {
+        "en": "Mark Twain",
+        "zh": "马克·吐温"
+      }
+    ],
+    "extra": {
+      "singapore": [
+        "Singlish poetry",
+        "Edwin Thumboo",
+        "Lee Tzu Pheng",
+        "Alfian Sa'at",
+        "Haresh Sharma",
+        "Catherine Lim",
+        "S. Rajaratnam",
+        "Fictional works about SG",
+        "Kampung Spirit stories",
+        "Singaporean playwrights",
+        "Literature in CMIO languages",
+        "Poetry in Malay",
+        "Chinese diaspora novels"
+      ],
+      "china": [
+        "红楼梦",
+        "西游记",
+        "水浒传",
+        "三国演义",
+        "鲁迅",
+        "金庸",
+        "茶馆",
+        "围城",
+        "活着",
+        "诗经",
+        "唐诗三百首",
+        "宋词",
+        "三体",
+        "莫言",
+        "张爱玲",
+        "边城",
+        "平凡的世界"
+      ]
+    }
+  }
+]
