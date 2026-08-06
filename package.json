@@ -10,8 +10,7 @@
     "typecheck": "tsc --noEmit",
     "verify": "node --experimental-strip-types scripts/verify-logic.ts",
     "verify:reel": "node --experimental-strip-types scripts/verify-reel.ts",
-    "verify:import": "node --experimental-strip-types scripts/verify-import.ts",
-    "migrate-topics": "node --experimental-strip-types scripts/migrate-topics.ts"
+    "verify:import": "node --experimental-strip-types scripts/verify-import.ts"
   },
   "dependencies": {
     "react": "^18.3.1",

@@ -4,7 +4,7 @@
  * The browser-only parts (File, xlsx) are not covered here — this exercises the
  * delimiter parser and the merge fold, which is where the decisions live.
  */
-import { parseDelimited } from '../src/lib/importTopics.ts';
+import { parseDelimited, tableToRows } from '../src/lib/importTopics.ts';
 import { planImport, toCsv } from '../src/lib/mergeTopics.ts';
 import type { Category } from '../src/data/topics.ts';
 import raw from '../src/data/topics.json' with { type: 'json' };
@@ -33,6 +33,45 @@ console.log('\nDelimited parsing');
   check('unescapes doubled quotes', rows[2][0] === 'he said "hi"', JSON.stringify(rows[2][0]));
   const tabs = parseDelimited('a\tb\nc\td\n', '\t');
   check('handles tabs', tabs[1][1] === 'd');
+}
+
+/* Header detection. The most guess-prone part of the parser: get this wrong and
+   a column is silently dropped, which is exactly what must never happen. */
+console.log('\nHeader detection');
+{
+  const named = tableToRows([
+    ['category', 'en', 'zh', 'region'],
+    ['Food', 'Laksa', '叻沙', 'singapore'],
+  ]);
+  check('reads the documented header', named.rows[0].category === 'Food' && named.rows[0].zh === '叻沙');
+
+  const loose = tableToRows([
+    ['word', 'meaning'],
+    ['resilience', '韧性'],
+  ]);
+  check('accepts a vocabulary-style header', loose.rows[0].en === 'resilience' && loose.rows[0].zh === '韧性',
+    JSON.stringify(loose.rows[0]));
+
+  const chinese = tableToRows([
+    ['分类', '英文', '中文'],
+    ['日常', 'Nostalgia', '怀旧'],
+  ]);
+  check('accepts Chinese header names', chinese.rows[0].category === '日常' && chinese.rows[0].zh === '怀旧',
+    JSON.stringify(chinese.rows[0]));
+
+  // No header at all: the first line is data and must not be eaten.
+  const headerless = tableToRows([
+    ['Serendipity', '机缘巧合'],
+    ['Ephemeral', '短暂'],
+  ]);
+  check('keeps the first row when there is no header', headerless.rows.length === 2, `${headerless.rows.length} rows`);
+  check('reads a headerless file positionally', headerless.rows[0].en === 'Serendipity' && headerless.rows[0].zh === '机缘巧合');
+
+  const single = tableToRows([['Nostalgia'], ['Regret']]);
+  check('reads a one-column word list', single.rows.length === 2 && single.rows[0].en === 'Nostalgia');
+
+  const blank = tableToRows([['', ''], ['', '']]);
+  check('reports an empty file instead of importing nothing silently', blank.errors.length > 0);
 }
 
 /* Header handling — the whole point is that partial files still work. */

@@ -73,7 +73,8 @@ Fitness,,晨跑还是夜跑,china
 ```
 
 Header names are matched loosely and in both languages — `english`, `topic`, `word`,
-`中文`, `分类` and similar all work. If there is no recognisable header at all, the
+`meaning`, `中文`, `分类` and similar all work, so a two-column vocabulary sheet
+(`word` / `meaning`) imports as-is. If there is no recognisable header at all, the
 first column is read as English and the second as 中文.
 
 A few behaviours worth knowing:
@@ -135,9 +136,6 @@ npm run verify        # phase machine, time helpers, topic bank integrity
 npm run verify:reel   # spin distribution is uniform, no topic is unreachable
 npm run verify:import # CSV parsing and the merge fold, end to end
 ```
-
-`npm run migrate-topics` regenerates the shipped bank from `docs/`. It overwrites
-`src/data/topics.json` wholesale, so it is not part of the normal workflow.
 
 ## Credits
 

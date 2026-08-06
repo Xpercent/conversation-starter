@@ -34,7 +34,7 @@ const MAX_ROWS = 10000;
 const HEADER_ALIASES: Record<keyof ImportedRow, string[]> = {
   category: ['category', 'categories', 'group', 'topic group', '类别', '分类', '类型'],
   en: ['en', 'english', 'topic', 'word', 'prompt', 'term', '英文', '话题', '英语'],
-  zh: ['zh', 'chinese', 'cn', 'mandarin', 'translation', '中文', '中文话题', '翻译'],
+  zh: ['zh', 'chinese', 'cn', 'mandarin', 'translation', 'meaning', 'definition', '中文', '中文话题', '翻译', '释义'],
   region: ['region', 'locale', 'bucket', 'pool', '地区', '区域'],
 };
 
@@ -46,7 +46,7 @@ const normalizeHeader = (value: string): string =>
  * looks like one. "Looks like one" means at least one cell matches a known
  * column name — otherwise the first line is data and would be lost.
  */
-function tableToRows(table: string[][]): ParseResult {
+export function tableToRows(table: string[][]): ParseResult {
   const errors: string[] = [];
   const cleaned = table.filter((row) => row.some((cell) => cell.trim() !== ''));
   if (cleaned.length === 0) return { rows: [], errors: ['That file has no rows in it.'] };
