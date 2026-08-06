@@ -73,11 +73,20 @@ export const zh: Dict = {
 
   importTitle: '上传话题表',
   importBlurb:
-    '支持 CSV、Excel 或纯文本文件。表头可以用 category、en、zh、region 这几列，全部可选；直接给一列词也可以。',
+    '支持 CSV、Excel 或纯文本文件 —— 一行一个词也可以。不知道怎么填？先下载模板：里面每一列都写了说明，直接覆盖示例就行。',
   importChoose: '选择文件',
   importDrop: '或拖到这里',
   importReading: '读取中…',
   importTemplate: '下载模板',
+  importTemplateCsv: `category,en,zh,region,notes 说明 — 看完可以整列删掉
+日常,The best advice you ignored,你没听进去的那句忠告,shared,"中英文都填。shared 表示每个地区都能抽到。"
+日常,The best kopi order,,singapore,"仅新加坡。英文填在 en 列，zh 留空。"
+日常,,躺平,china,"仅中国。中文填在 zh 列，en 留空。"
+面试准备,Tell me about a failure,说说你的一次失败,shared,"不存在的分类会自动新建。"
+,,随便一个词,,"不填 category 和 region，就放到你在应用里选的位置。"
+,,,,"region 可以填：shared、singapore、china。每一列都可以留空。"
+,,,,"看完把这六行示例删掉，换成你自己的话题。"
+`,
   importFallback: '未分类的话题放入',
   importPreviewTitle: '准备导入',
   importCancel: '取消',

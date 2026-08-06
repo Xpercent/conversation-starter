@@ -7,6 +7,8 @@
 import { parseDelimited, tableToRows } from '../src/lib/importTopics.ts';
 import { planImport, toCsv } from '../src/lib/mergeTopics.ts';
 import type { Category } from '../src/data/topics.ts';
+import { en } from '../src/i18n/en.ts';
+import { zh } from '../src/i18n/zh.ts';
 import raw from '../src/data/topics.json' with { type: 'json' };
 
 const defaults = raw as Category[];
@@ -183,6 +185,36 @@ console.log('\nCSV round trip');
     reimported.categories.length === defaults.length,
     `${reimported.categories.length} vs ${defaults.length}`,
   );
+}
+
+/*
+ * The template is the main thing a new user will open, and it teaches by
+ * example — so it has to actually import. Its `notes` column must be ignored,
+ * its trailing instruction rows must not become topics, and the same has to
+ * hold for the Chinese translation of it.
+ */
+console.log('\nThe downloadable template');
+for (const [locale, dict] of [['en', en], ['zh', zh]] as const) {
+  const parsed = tableToRows(parseDelimited(dict.importTemplateCsv, ','));
+  check(`${locale}: template parses with no complaints`, parsed.errors.length === 0, parsed.errors.join('; '));
+  check(`${locale}: the notes column is not treated as a topic`, parsed.rows.every((r) => !(r.en ?? '').startsWith('"') && !(r.zh ?? '').startsWith('"')));
+  check(`${locale}: instruction-only rows are skipped`, parsed.rows.length === 5, `${parsed.rows.length} rows`);
+
+  const plan = planImport(defaults, parsed.rows, {
+    mode: 'merge',
+    fallbackCategoryId: 'general',
+    fallbackBucket: 'base',
+  });
+  // Importing the template as-is must be a clean run: an example that collides
+  // with the shipped bank would report a skip and read as the template's fault.
+  check(`${locale}: every example row imports`, plan.added === 5, `added ${plan.added}`);
+  check(`${locale}: no example collides with the shipped bank`, plan.duplicates === 0, `${plan.duplicates} duplicates`);
+  check(`${locale}: the example creates exactly one new category`, plan.newCategories.length === 1, plan.newCategories.join(', '));
+
+  const singapore = plan.categories.find((c) => c.id === 'general')!.extra.singapore;
+  const china = plan.categories.find((c) => c.id === 'general')!.extra.china;
+  check(`${locale}: the singapore example lands in the singapore bucket`, singapore.includes('The best kopi order'));
+  check(`${locale}: the china example lands in the china bucket`, china.includes('躺平'));
 }
 
 console.log(failures === 0 ? '\nALL CHECKS PASSED\n' : `\n${failures} CHECK(S) FAILED\n`);

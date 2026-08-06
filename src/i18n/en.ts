@@ -81,11 +81,27 @@ export const en = {
   // Import / export
   importTitle: 'Upload a word list',
   importBlurb:
-    'CSV, Excel, or a plain text file. Use columns named category, en, zh and region — every one of them is optional, and a bare list of words works too.',
+    'CSV, Excel, or a plain text file — a bare list of words, one per line, is enough. Not sure how to lay it out? Start from the template: it explains every column, and you type straight over the examples.',
   importChoose: 'Choose a file',
   importDrop: 'or drop one here',
   importReading: 'Reading…',
   importTemplate: 'Download a template',
+  /*
+   * The template teaches the format by being the format. The `notes` column is
+   * not one the importer recognises, so it is ignored on the way back in — which
+   * means the instructions can sit right next to the rows they describe instead
+   * of in a README nobody opens. The last row has no topic text at all, so it is
+   * skipped too.
+   */
+  importTemplateCsv: `category,en,zh,region,notes — read me, then delete this column
+General,The best advice you ignored,你没听进去的那句忠告,shared,"Both languages filled in. ""shared"" means every region can draw it."
+General,The best kopi order,,singapore,"Singapore only. English goes in the en column; leave zh empty."
+General,,躺平,china,"China only. Chinese goes in the zh column; leave en empty."
+Interview Prep,Tell me about a failure,说说你的一次失败,shared,"A category that doesn't exist yet gets created for you."
+,Anything at all,,,"Leave category and region empty and it lands wherever you choose in the app."
+,,,,"region can be: shared, singapore, or china. Every column is optional."
+,,,,"Now delete these six example rows and type your own topics."
+`,
   importFallback: 'Put uncategorised topics in',
   importPreviewTitle: 'Ready to import',
   importCancel: 'Cancel',

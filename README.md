@@ -87,7 +87,13 @@ A few behaviours worth knowing:
   text for 中文, so the topic stays reachable in every region rather than vanishing
   from one. The preview tells you how many rows this affected.
 
-Use **Download a template** in the panel to get a correctly shaped starter file.
+Use **Download a template** in the panel to get a starter file. It carries a
+`notes` column explaining what each row demonstrates — the importer ignores
+columns it doesn't recognise, so you can leave that column in place or delete it,
+and either way it never becomes a topic. Type over the examples and upload.
+
+The template downloads with a UTF-8 byte-order mark so Excel opens Chinese text
+correctly rather than as mojibake; the importer strips it back off.
 
 ### Getting your bank back out
 

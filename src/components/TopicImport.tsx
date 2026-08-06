@@ -18,7 +18,13 @@ type Pending =
 type Stage = 'idle' | 'reading' | 'preview';
 
 function download(filename: string, contents: string, type: string): void {
-  const url = URL.createObjectURL(new Blob([contents], { type }));
+  /*
+   * Excel reads a CSV in the system encoding unless it finds a byte-order mark,
+   * which turns every Chinese topic into mojibake the moment someone opens the
+   * template. The importer strips the mark back off, so it costs nothing.
+   */
+  const body = type === 'text/csv' ? '\uFEFF' + contents : contents;
+  const url = URL.createObjectURL(new Blob([body], { type: `${type};charset=utf-8` }));
   const link = document.createElement('a');
   link.href = url;
   link.download = filename;
@@ -26,12 +32,6 @@ function download(filename: string, contents: string, type: string): void {
   // Revoking immediately can cancel the download in Safari; a tick is enough.
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
-
-const TEMPLATE = `category,en,zh,region
-General,Nostalgia,怀旧,shared
-General,The best kopi order,,singapore
-Fitness,,晨跑还是夜跑,china
-`;
 
 export function TopicImport({ categories, onApply }: Props) {
   const t = useT();
@@ -160,7 +160,7 @@ export function TopicImport({ categories, onApply }: Props) {
             <button
               type="button"
               className="import-link"
-              onClick={() => download('topics-template.csv', TEMPLATE, 'text/csv')}
+              onClick={() => download('topics-template.csv', t.importTemplateCsv, 'text/csv')}
             >
               {t.importTemplate}
             </button>
