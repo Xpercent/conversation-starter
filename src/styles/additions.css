@@ -509,3 +509,35 @@
 .settings-about a:hover {
   color: var(--accent-bright);
 }
+
+/* --- Drill mode --- */
+
+.rate-prompt {
+  font-family: var(--font-body);
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0.4rem 0 0;
+}
+
+.rate-row {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* The three ratings are peers — none may look like the "correct" answer. */
+.rate-row .btn.rate {
+  min-width: 6.2rem;
+}
+
+/* Session save failure — sticky and coral, never gold, for the same reason as
+   .topics-save.is-failed: success and failure must not read alike. */
+.save-warning {
+  font-family: var(--font-body);
+  color: #e8846b;
+  font-size: 0.82rem;
+  text-align: center;
+  margin: 0.8rem auto 0;
+  max-width: 32rem;
+}

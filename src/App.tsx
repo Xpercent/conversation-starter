@@ -9,7 +9,9 @@ import {
 } from 'react';
 import {
   DEFAULT_CATEGORY_ID,
+  categoryLabel,
   defaultRegion,
+  getCategoryById,
   getPool,
   getSelectableCategories,
   getTopicsVersion,
@@ -20,7 +22,9 @@ import {
 } from './data/topics';
 import { DICTS, I18nContext } from './i18n';
 import { audio } from './lib/audio';
-import { clampResearch, clampSpeech, durationParts } from './lib/time';
+import { newSessionId, type Rating } from './lib/session';
+import { appendSession } from './lib/sessionsStore';
+import { clampDrill, clampResearch, clampSpeech, DRILL_DEFAULT, durationParts } from './lib/time';
 import { phaseReducer } from './state/phase';
 import { useSpinner } from './hooks/useSpinner';
 import { useTimer } from './hooks/useTimer';
@@ -56,9 +60,16 @@ export function App() {
     const n = parseNumber(raw);
     return n === null ? null : clampResearch(n);
   });
+  const [drillSeconds, setDrillSeconds] = usePersistedSetting('drill', DRILL_DEFAULT, (raw) => {
+    const n = parseNumber(raw);
+    return n === null ? null : clampDrill(n);
+  });
   const [muted, setMuted] = usePersistedSetting('muted', false, parseBoolean);
 
   const [settingsOpen, setSettingsOpen] = useState(false);
+  // Sticky until the next successful save — the overlay that failed is usually
+  // already gone by the time anyone could read a notice inside it.
+  const [saveFailed, setSaveFailed] = useState(false);
 
   const locale = localeForRegion(region);
   const t = DICTS[locale];
@@ -106,10 +117,13 @@ export function App() {
   const controlsDisabled = spinning || active;
   const timer = phase === 'research' ? researchTimer : speechTimer;
 
+  // Drill rounds run on their own, much shorter clock.
+  const activeSpeechSeconds = mode === 'drill' ? drillSeconds : speechSeconds;
+
   const startSpeech = useCallback(() => {
     dispatch({ type: 'startSpeech' });
-    speechTimer.start(speechSeconds);
-  }, [speechTimer, speechSeconds]);
+    speechTimer.start(activeSpeechSeconds);
+  }, [speechTimer, activeSpeechSeconds]);
 
   const handleStart = () => {
     audio.unlock();
@@ -118,7 +132,7 @@ export function App() {
       researchTimer.start(researchSeconds);
     } else {
       dispatch({ type: 'start', mode });
-      speechTimer.start(speechSeconds);
+      speechTimer.start(activeSpeechSeconds);
     }
   };
 
@@ -129,11 +143,61 @@ export function App() {
     audio.chime();
   };
 
+  /**
+   * One session, one record — written only when the session reached `done`.
+   * Closing mid-speech is a bail, not a session. topicText and categoryLabel
+   * are snapshotted because the bank is replaceable out from under them (see
+   * session.ts).
+   */
+  const storeSession = useCallback(
+    (rating: Rating | null) => {
+      if (phase !== 'done') return;
+      const topicText = landed ?? topic ?? '';
+      if (!topicText) return;
+      const category = getCategoryById(pool.categoryId);
+      try {
+        appendSession({
+          id: newSessionId(),
+          createdAt: new Date().toISOString(),
+          topicText,
+          categoryId: pool.categoryId,
+          categoryLabel: category ? categoryLabel(category, locale) : pool.categoryId,
+          mode,
+          language: locale,
+          region,
+          rating,
+          cues: null,
+          notes: null,
+          reflection: null,
+        });
+        setSaveFailed(false);
+      } catch {
+        setSaveFailed(true);
+      }
+    },
+    [phase, landed, topic, pool.categoryId, locale, mode, region],
+  );
+
   const handleClose = useCallback(() => {
+    storeSession(null);
     speechTimer.stop();
     researchTimer.stop();
     dispatch({ type: 'reset' });
-  }, [speechTimer, researchTimer]);
+  }, [storeSession, speechTimer, researchTimer]);
+
+  /** Drill: the rating tap saves the round and rolls straight into the next spin. */
+  const handleRate = useCallback(
+    (rating: Rating) => {
+      // First thing in the gesture, same as handleSpin — iOS audio contexts.
+      audio.unlock();
+      storeSession(rating);
+      speechTimer.stop();
+      researchTimer.stop();
+      dispatch({ type: 'reset' });
+      spin();
+    },
+    [storeSession, speechTimer, researchTimer, spin],
+  );
 
   const handleSpin = () => {
     // Must be the first thing in the gesture or iOS leaves the context suspended.
@@ -155,8 +219,8 @@ export function App() {
   const shellRef = useRef<HTMLDivElement>(null);
   const inert = active || settingsOpen;
 
-  const speechParts = durationParts(speechSeconds);
   const researchParts = durationParts(researchSeconds);
+  const activeSpeechParts = durationParts(activeSpeechSeconds);
 
   const eyebrow = spinning ? t.reelDrawing : landed ? t.reelYourTopic : t.reelReady;
   const spinLabel = spinning ? t.spinning : landed ? t.spinAgain : t.spin;
@@ -180,6 +244,7 @@ export function App() {
                   options={[
                     { id: 'off-the-cuff', label: t.modeOffTheCuff, emoji: '🧠' },
                     { id: 'deep-research', label: t.modeDeepResearch, emoji: '🔍' },
+                    { id: 'drill', label: t.modeDrill, emoji: '⚡' },
                   ]}
                   value={mode}
                   onChange={(next) => setMode(next as ModeId)}
@@ -200,10 +265,14 @@ export function App() {
                 />
 
                 <p className="mode-blurb">
-                  {mode === 'off-the-cuff' ? t.modeOffTheCuffBlurb : t.modeDeepResearchBlurb}
+                  {mode === 'off-the-cuff'
+                    ? t.modeOffTheCuffBlurb
+                    : mode === 'deep-research'
+                      ? t.modeDeepResearchBlurb
+                      : t.modeDrillBlurb}
                 </p>
 
-                {mode === 'off-the-cuff' && (
+                {mode !== 'deep-research' && (
                   <CategorySelect
                     categories={selectableCategories}
                     value={categoryId}
@@ -242,7 +311,7 @@ export function App() {
                   >
                     {mode === 'deep-research'
                       ? t.startResearch(t.duration(researchParts.minutes, researchParts.seconds))
-                      : t.startTimer(t.duration(speechParts.minutes, speechParts.seconds))}
+                      : t.startTimer(t.duration(activeSpeechParts.minutes, activeSpeechParts.seconds))}
                   </button>
                 </div>
 
@@ -262,6 +331,12 @@ export function App() {
               </div>
             </div>
           </main>
+
+          {saveFailed && (
+            <p className="save-warning" role="alert">
+              {t.sessionSaveFailed}
+            </p>
+          )}
 
           <footer className="page-credit">
             {t.creditBy}
@@ -283,11 +358,12 @@ export function App() {
             phase={phase}
             topic={landed ?? topic ?? ''}
             remaining={timer.remaining}
-            speechSeconds={speechSeconds}
+            speechSeconds={activeSpeechSeconds}
             researchSeconds={researchSeconds}
-            isOffTheCuff={mode === 'off-the-cuff'}
+            mode={mode}
             onDoneResearching={handleDoneResearching}
             onStartSpeech={startSpeech}
+            onRate={handleRate}
             onClose={handleClose}
           />
         )}
@@ -296,9 +372,11 @@ export function App() {
           open={settingsOpen}
           speechSeconds={speechSeconds}
           researchSeconds={researchSeconds}
+          drillSeconds={drillSeconds}
           muted={muted}
           onSpeechChange={setSpeechSeconds}
           onResearchChange={setResearchSeconds}
+          onDrillChange={setDrillSeconds}
           onMutedChange={setMuted}
           onClose={() => setSettingsOpen(false)}
         />

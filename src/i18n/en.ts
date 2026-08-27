@@ -10,9 +10,11 @@ export const en = {
   // Modes
   modeOffTheCuff: 'Off the cuff',
   modeDeepResearch: 'Deep research',
+  modeDrill: 'Drill',
   modeOffTheCuffBlurb: 'Minimal prep. Try to think quick on your feet.',
   modeDeepResearchBlurb:
     "Spin a topic, set a research timer, then start the speech timer whenever you're ready.",
+  modeDrillBlurb: 'Fast rounds — spin, speak, rate yourself, straight into the next one.',
   modeLabel: 'Practice mode',
 
   // Regions
@@ -50,15 +52,25 @@ export const en = {
   stageSoWhat: 'So what?',
   stageNowWhat: 'Now what?',
 
+  // Drill self-rating. These measure how the speaking went, never whether an
+  // answer was "right" — there is no right answer to check against.
+  ratePrompt: 'How did that go?',
+  rateStruggled: 'Struggled',
+  rateOkay: 'Okay',
+  rateSmooth: 'Smooth',
+  sessionSaveFailed: 'That session could not be saved — browser storage is unavailable.',
+
   // Settings
   settings: 'Settings',
-  settingsBlurb: 'Timer lengths in whole minutes.',
+  settingsBlurb: 'Timer lengths for each mode.',
   settingsOpen: 'Open settings',
   tabTimers: 'Timers',
   tabTopics: 'Topics',
   speech: 'Speech',
   research: 'Research',
   researchHint: 'Deep research only',
+  drill: 'Drill round',
+  drillHint: 'Drill mode only',
   muteSound: 'Mute sound effects',
   savedForNextTime: 'Saved for next time.',
 

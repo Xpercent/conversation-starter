@@ -4,7 +4,7 @@ import { validateBank } from '../lib/topicsSchema';
 
 export type Locale = 'en' | 'zh';
 export type Region = 'english' | 'singapore' | 'china';
-export type ModeId = 'off-the-cuff' | 'deep-research';
+export type ModeId = 'off-the-cuff' | 'deep-research' | 'drill';
 
 export interface TopicPair {
   en: string;

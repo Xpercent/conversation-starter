@@ -8,6 +8,9 @@ import {
   SPEECH_MAX_MIN,
   RESEARCH_MIN_MIN,
   RESEARCH_MAX_MIN,
+  DRILL_MIN_S,
+  DRILL_MAX_S,
+  DRILL_STEP_S,
 } from '../lib/time';
 import { TopicBankEditor } from './TopicBankEditor';
 
@@ -15,30 +18,41 @@ interface Props {
   open: boolean;
   speechSeconds: number;
   researchSeconds: number;
+  drillSeconds: number;
   muted: boolean;
   onSpeechChange: (seconds: number) => void;
   onResearchChange: (seconds: number) => void;
+  onDrillChange: (seconds: number) => void;
   onMutedChange: (muted: boolean) => void;
   onClose: () => void;
 }
 
+/**
+ * Seconds-based throughout so drill's sub-minute rounds fit the same control:
+ * speech and research pass a 60-second step, which makes them whole-minute
+ * sliders exactly as before.
+ */
 function DurationField({
   label,
   seconds,
-  minMinutes,
-  maxMinutes,
+  minSeconds,
+  maxSeconds,
+  stepSeconds,
   hint,
   onChange,
 }: {
   label: string;
   seconds: number;
-  minMinutes: number;
-  maxMinutes: number;
+  minSeconds: number;
+  maxSeconds: number;
+  stepSeconds: number;
   hint?: string;
   onChange: (seconds: number) => void;
 }) {
   const t = useT();
   const { minutes, seconds: rest } = durationParts(seconds);
+  const minParts = durationParts(minSeconds);
+  const maxParts = durationParts(maxSeconds);
   return (
     <div className="duration-field">
       <div className="duration-head">
@@ -48,16 +62,16 @@ function DurationField({
       <input
         className="duration-slider"
         type="range"
-        min={minMinutes}
-        max={maxMinutes}
-        step={1}
-        value={Math.round(seconds / 60)}
+        min={minSeconds}
+        max={maxSeconds}
+        step={stepSeconds}
+        value={seconds}
         aria-label={label}
-        onChange={(event) => onChange(Number(event.target.value) * 60)}
+        onChange={(event) => onChange(Number(event.target.value))}
       />
       <div className="duration-ends">
-        <span>{t.duration(minMinutes, 0)}</span>
-        <span>{t.duration(maxMinutes, 0)}</span>
+        <span>{t.duration(minParts.minutes, minParts.seconds)}</span>
+        <span>{t.duration(maxParts.minutes, maxParts.seconds)}</span>
       </div>
       {hint && <p className="duration-hint">{hint}</p>}
     </div>
@@ -68,9 +82,11 @@ export function SettingsModal({
   open,
   speechSeconds,
   researchSeconds,
+  drillSeconds,
   muted,
   onSpeechChange,
   onResearchChange,
+  onDrillChange,
   onMutedChange,
   onClose,
 }: Props) {
@@ -141,17 +157,28 @@ export function SettingsModal({
             <DurationField
               label={t.speech}
               seconds={speechSeconds}
-              minMinutes={SPEECH_MIN_MIN}
-              maxMinutes={SPEECH_MAX_MIN}
+              minSeconds={SPEECH_MIN_MIN * 60}
+              maxSeconds={SPEECH_MAX_MIN * 60}
+              stepSeconds={60}
               onChange={onSpeechChange}
             />
             <DurationField
               label={t.research}
               seconds={researchSeconds}
-              minMinutes={RESEARCH_MIN_MIN}
-              maxMinutes={RESEARCH_MAX_MIN}
+              minSeconds={RESEARCH_MIN_MIN * 60}
+              maxSeconds={RESEARCH_MAX_MIN * 60}
+              stepSeconds={60}
               hint={t.researchHint}
               onChange={onResearchChange}
+            />
+            <DurationField
+              label={t.drill}
+              seconds={drillSeconds}
+              minSeconds={DRILL_MIN_S}
+              maxSeconds={DRILL_MAX_S}
+              stepSeconds={DRILL_STEP_S}
+              hint={t.drillHint}
+              onChange={onDrillChange}
             />
             <div className="settings-mute">
               <input

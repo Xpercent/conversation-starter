@@ -10,8 +10,10 @@ export const zh: Dict = {
 
   modeOffTheCuff: '即兴开讲',
   modeDeepResearch: '深度研究',
+  modeDrill: '速练',
   modeOffTheCuffBlurb: '几乎不用准备，练的就是临场反应。',
   modeDeepResearchBlurb: '先抽题，再设一个查资料的计时器，准备好了就开始演讲计时。',
+  modeDrillBlurb: '快速轮换——抽一个，开口说，自评一下，马上下一个。',
   modeLabel: '练习模式',
 
   regionLabel: '地区',
@@ -45,14 +47,22 @@ export const zh: Dict = {
   stageSoWhat: '所以呢？',
   stageNowWhat: '然后呢？',
 
+  ratePrompt: '这一轮说得怎么样？',
+  rateStruggled: '吃力',
+  rateOkay: '还行',
+  rateSmooth: '流畅',
+  sessionSaveFailed: '本次练习没有保存——浏览器存储不可用。',
+
   settings: '设置',
-  settingsBlurb: '计时长度以整分钟为单位。',
+  settingsBlurb: '各模式的计时长度。',
   settingsOpen: '打开设置',
   tabTimers: '计时',
   tabTopics: '话题库',
   speech: '演讲',
   research: '查资料',
   researchHint: '仅深度研究模式',
+  drill: '速练每轮',
+  drillHint: '仅速练模式',
   muteSound: '静音',
   savedForNextTime: '已保存，下次继续用。',
 
