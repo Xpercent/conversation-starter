@@ -1,5 +1,11 @@
 import { phaseReducer } from '../src/state/phase.ts';
 import { clampSpeech, clampResearch, formatClock, progressFraction, durationParts } from '../src/lib/time.ts';
+import {
+  sessionFileName,
+  sessionToMarkdown,
+  validateSessions,
+  type SessionRecord,
+} from '../src/lib/session.ts';
 import { readFileSync } from 'node:fs';
 
 let fails = 0;
@@ -33,6 +39,44 @@ check('clock negative floors at 0', formatClock(-5), '0:00');
 check('progress half', progressFraction(30, 60), 0.5);
 check('progress clamps', progressFraction(-10, 60), 1);
 check('duration parts', durationParts(200), { minutes: 3, seconds: 20 });
+
+// --- Session records ---
+const drillRecord: SessionRecord = {
+  id: 'a', createdAt: '2026-08-27T04:00:00.000Z', topicText: '躺平', categoryId: 'general',
+  categoryLabel: '日常', mode: 'drill', language: 'zh', region: 'china',
+  rating: 2, cues: null, notes: null, reflection: null,
+};
+const deepRecord: SessionRecord = {
+  id: 'b', createdAt: '2026-08-27T05:00:00.000Z', topicText: 'The best advice: "ignore it"',
+  categoryId: 'deep-research', categoryLabel: 'Deep research', mode: 'deep-research',
+  language: 'en', region: 'english', rating: null,
+  cues: [' first cue ', '', 'second cue'], notes: 'the notes', reflection: 'the reflection',
+};
+const cuffRecord: SessionRecord = {
+  id: 'c', createdAt: '2026-08-27T06:00:00.000Z', topicText: 'A topic', categoryId: 'general',
+  categoryLabel: 'General', mode: 'off-the-cuff', language: 'en', region: 'english',
+  rating: null, cues: null, notes: null, reflection: null,
+};
+
+check('valid records round-trip', validateSessions([drillRecord, deepRecord, cuffRecord])?.length, 3);
+check('bad rows dropped, good rows kept',
+  validateSessions([drillRecord, { id: 'x' }, { ...cuffRecord, rating: 9 }])?.length, 1);
+check('non-array is unsalvageable', validateSessions({ not: 'an array' }), null);
+check('empty topic rejected', validateSessions([{ ...cuffRecord, topicText: '' }])?.length, 0);
+
+const drillMd = sessionToMarkdown(drillRecord);
+check('drill md has rating', drillMd.includes('rating: 2'), true);
+check('drill md has no empty Cues heading', drillMd.includes('## Cues'), false);
+const deepMd = sessionToMarkdown(deepRecord);
+check('deep md quotes the topic', deepMd.includes('topic: "The best advice: \\"ignore it\\""'), true);
+check('deep md has all three sections',
+  ['## Cues', '## Notes', '## Reflection'].every((h) => deepMd.includes(h)), true);
+check('deep md trims and skips empty cues', deepMd.includes('- first cue\n- second cue'), true);
+check('deep md omits rating when null', deepMd.includes('rating:'), false);
+const cuffMd = sessionToMarkdown(cuffRecord);
+check('off-the-cuff md is frontmatter + topic only', cuffMd.includes('##'), false);
+check('filename is date-first and sanitised',
+  sessionFileName(deepRecord), '2026-08-27 The best advice ignore it.md');
 
 // --- Topic bank integrity (mirrors the module-load assertions) ---
 const cats = JSON.parse(readFileSync('src/data/topics.json', 'utf8'));
