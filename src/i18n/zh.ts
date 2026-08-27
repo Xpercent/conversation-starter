@@ -53,6 +53,18 @@ export const zh: Dict = {
   rateSmooth: '流畅',
   sessionSaveFailed: '本次练习没有保存——浏览器存储不可用。',
 
+  jotsLabel: '边查边记',
+  jotsPlaceholder: '一行一个想法，回车添加',
+  jotDelete: '删除这条',
+  notesLabel: '整理要点',
+  notesPlaceholder: '开口之前，把查到的内容浓缩成你要讲的几个要点。',
+  reflectLabel: '复盘',
+  reflectPlaceholder: '哪里卡住了？哪里讲得比预想好？（可不填）',
+  copyMarkdown: '复制为 Markdown',
+  downloadMarkdown: '下载 .md',
+  copied: '已复制',
+  copyFailed: '复制失败——请用下载',
+
   settings: '设置',
   settingsBlurb: '各模式的计时长度。',
   settingsOpen: '打开设置',

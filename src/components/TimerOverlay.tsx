@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { CaptureJots } from './CaptureJots';
 import { SpeechStages, stagesReached } from './SpeechStages';
 import { formatClock, durationParts, progressFraction } from '../lib/time';
 import { useT } from '../i18n';
@@ -15,6 +16,15 @@ interface Props {
   speechSeconds: number;
   researchSeconds: number;
   mode: ModeId;
+  /** Deep-research capture, owned by App so it survives phase changes. */
+  cues: string[];
+  notes: string;
+  reflection: string;
+  onCuesChange: (cues: string[]) => void;
+  onNotesChange: (notes: string) => void;
+  onReflectionChange: (reflection: string) => void;
+  /** Markdown of the session as captured so far; null when there is no topic. */
+  makeExport: () => { md: string; filename: string } | null;
   onDoneResearching: () => void;
   onStartSpeech: () => void;
   /** Drill only: self-rating tap, which also rolls straight into the next spin. */
@@ -29,6 +39,13 @@ export function TimerOverlay({
   speechSeconds,
   researchSeconds,
   mode,
+  cues,
+  notes,
+  reflection,
+  onCuesChange,
+  onNotesChange,
+  onReflectionChange,
+  makeExport,
   onDoneResearching,
   onStartSpeech,
   onRate,
@@ -36,18 +53,46 @@ export function TimerOverlay({
 }: Props) {
   const t = useT();
   const primaryRef = useRef<HTMLButtonElement>(null);
+  const notesRef = useRef<HTMLTextAreaElement>(null);
+  const [copyState, setCopyState] = useState<'idle' | 'ok' | 'fail'>('idle');
 
   const isResearch = phase === 'research';
   const isDone = phase === 'done';
   const isLive = phase === 'speech';
   const isOffTheCuff = mode === 'off-the-cuff';
   const isDrill = mode === 'drill';
+  const isDeepResearch = mode === 'deep-research';
 
   // Move focus to the main action whenever the phase changes, so a keyboard
-  // user always lands on the thing they most likely want next.
+  // user always lands on the thing they most likely want next. In `ready`
+  // that thing is the notes box — the untimed pause exists for writing.
   useEffect(() => {
-    primaryRef.current?.focus();
+    setCopyState('idle');
+    if (notesRef.current) notesRef.current.focus();
+    else primaryRef.current?.focus();
   }, [phase]);
+
+  const handleCopy = async () => {
+    const exported = makeExport();
+    if (!exported) return;
+    try {
+      await navigator.clipboard.writeText(exported.md);
+      setCopyState('ok');
+    } catch {
+      setCopyState('fail');
+    }
+  };
+
+  const handleDownload = () => {
+    const exported = makeExport();
+    if (!exported) return;
+    const url = URL.createObjectURL(new Blob([exported.md], { type: 'text/markdown;charset=utf-8' }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = exported.filename;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
 
   const total = isResearch ? researchSeconds : speechSeconds;
   const fraction = phase === 'ready' ? 0 : progressFraction(remaining, total);
@@ -98,6 +143,48 @@ export function TimerOverlay({
           />
         )}
 
+        {/* Cornell Record: jots while researching, still editable during the
+            untimed Reduce pause — condensing means looking at what you wrote. */}
+        {isDeepResearch && (isResearch || phase === 'ready') && (
+          <div className="capture-block">
+            <p className="capture-label">{t.jotsLabel}</p>
+            <CaptureJots items={cues} onChange={onCuesChange} />
+          </div>
+        )}
+
+        {isDeepResearch && phase === 'ready' && (
+          <div className="capture-block">
+            <label className="capture-label" htmlFor="capture-notes">
+              {t.notesLabel}
+            </label>
+            <textarea
+              ref={notesRef}
+              id="capture-notes"
+              className="capture-textarea"
+              rows={4}
+              value={notes}
+              placeholder={t.notesPlaceholder}
+              onChange={(event) => onNotesChange(event.target.value)}
+            />
+          </div>
+        )}
+
+        {isDeepResearch && isDone && (
+          <div className="capture-block">
+            <label className="capture-label" htmlFor="capture-reflection">
+              {t.reflectLabel}
+            </label>
+            <textarea
+              id="capture-reflection"
+              className="capture-textarea"
+              rows={3}
+              value={reflection}
+              placeholder={t.reflectPlaceholder}
+              onChange={(event) => onReflectionChange(event.target.value)}
+            />
+          </div>
+        )}
+
         {isDrill && isDone && <p className="rate-prompt">{t.ratePrompt}</p>}
 
         <div className="timer-actions">
@@ -126,6 +213,16 @@ export function TimerOverlay({
                 {t.rateSmooth}
               </button>
             </div>
+          )}
+          {isDeepResearch && isDone && (
+            <>
+              <button type="button" className="btn secondary" onClick={handleCopy}>
+                {copyState === 'ok' ? t.copied : copyState === 'fail' ? t.copyFailed : t.copyMarkdown}
+              </button>
+              <button type="button" className="btn secondary" onClick={handleDownload}>
+                {t.downloadMarkdown}
+              </button>
+            </>
           )}
           {(isLive || (isDone && !isDrill)) && (
             <button ref={primaryRef} type="button" className="btn secondary" onClick={onClose}>

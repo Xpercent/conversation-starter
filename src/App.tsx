@@ -22,7 +22,13 @@ import {
 } from './data/topics';
 import { DICTS, I18nContext } from './i18n';
 import { audio } from './lib/audio';
-import { newSessionId, type Rating } from './lib/session';
+import {
+  newSessionId,
+  sessionFileName,
+  sessionToMarkdown,
+  type Rating,
+  type SessionRecord,
+} from './lib/session';
 import { appendSession } from './lib/sessionsStore';
 import { clampDrill, clampResearch, clampSpeech, DRILL_DEFAULT, durationParts } from './lib/time';
 import { phaseReducer } from './state/phase';
@@ -70,6 +76,12 @@ export function App() {
   // Sticky until the next successful save — the overlay that failed is usually
   // already gone by the time anyone could read a notice inside it.
   const [saveFailed, setSaveFailed] = useState(false);
+
+  // Deep-research capture. Owned here rather than by the overlay so the text
+  // survives phase changes and is still in hand at the single exit path below.
+  const [cues, setCues] = useState<string[]>([]);
+  const [notes, setNotes] = useState('');
+  const [reflection, setReflection] = useState('');
 
   const locale = localeForRegion(region);
   const t = DICTS[locale];
@@ -127,6 +139,9 @@ export function App() {
 
   const handleStart = () => {
     audio.unlock();
+    setCues([]);
+    setNotes('');
+    setReflection('');
     if (mode === 'deep-research') {
       dispatch({ type: 'start', mode });
       researchTimer.start(researchSeconds);
@@ -143,40 +158,61 @@ export function App() {
     audio.chime();
   };
 
+  const buildRecord = useCallback(
+    (rating: Rating | null): SessionRecord | null => {
+      const topicText = landed ?? topic ?? '';
+      if (!topicText) return null;
+      const category = getCategoryById(pool.categoryId);
+      const trimmedCues = cues.map((c) => c.trim()).filter(Boolean);
+      return {
+        id: newSessionId(),
+        createdAt: new Date().toISOString(),
+        topicText,
+        categoryId: pool.categoryId,
+        // Snapshotted alongside topicText — the bank is replaceable out from
+        // under both (see session.ts).
+        categoryLabel: category ? categoryLabel(category, locale) : pool.categoryId,
+        mode,
+        language: locale,
+        region,
+        rating,
+        cues: trimmedCues.length > 0 ? trimmedCues : null,
+        notes: notes.trim() || null,
+        reflection: reflection.trim() || null,
+      };
+    },
+    [landed, topic, pool.categoryId, locale, mode, region, cues, notes, reflection],
+  );
+
+  const hasCapture =
+    cues.some((c) => c.trim()) || notes.trim() !== '' || reflection.trim() !== '';
+
   /**
-   * One session, one record — written only when the session reached `done`.
-   * Closing mid-speech is a bail, not a session. topicText and categoryLabel
-   * are snapshotted because the bank is replaceable out from under them (see
-   * session.ts).
+   * One session, one record — written when the session reached `done`, or when
+   * it is closed early with captured text in it: closing mid-speech is a bail,
+   * not a session, but typed thoughts must never vanish with it.
    */
   const storeSession = useCallback(
     (rating: Rating | null) => {
-      if (phase !== 'done') return;
-      const topicText = landed ?? topic ?? '';
-      if (!topicText) return;
-      const category = getCategoryById(pool.categoryId);
+      if (phase !== 'done' && !hasCapture) return;
+      const record = buildRecord(rating);
+      if (!record) return;
       try {
-        appendSession({
-          id: newSessionId(),
-          createdAt: new Date().toISOString(),
-          topicText,
-          categoryId: pool.categoryId,
-          categoryLabel: category ? categoryLabel(category, locale) : pool.categoryId,
-          mode,
-          language: locale,
-          region,
-          rating,
-          cues: null,
-          notes: null,
-          reflection: null,
-        });
+        appendSession(record);
         setSaveFailed(false);
       } catch {
         setSaveFailed(true);
       }
     },
-    [phase, landed, topic, pool.categoryId, locale, mode, region],
+    [phase, hasCapture, buildRecord],
   );
+
+  /** The overlay's export buttons — markdown of the session as captured so far. */
+  const makeExport = useCallback(() => {
+    const record = buildRecord(null);
+    if (!record) return null;
+    return { md: sessionToMarkdown(record), filename: sessionFileName(record) };
+  }, [buildRecord]);
 
   const handleClose = useCallback(() => {
     storeSession(null);
@@ -361,6 +397,13 @@ export function App() {
             speechSeconds={activeSpeechSeconds}
             researchSeconds={researchSeconds}
             mode={mode}
+            cues={cues}
+            notes={notes}
+            reflection={reflection}
+            onCuesChange={setCues}
+            onNotesChange={setNotes}
+            onReflectionChange={setReflection}
+            makeExport={makeExport}
             onDoneResearching={handleDoneResearching}
             onStartSpeech={startSpeech}
             onRate={handleRate}

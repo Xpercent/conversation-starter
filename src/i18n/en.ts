@@ -60,6 +60,19 @@ export const en = {
   rateSmooth: 'Smooth',
   sessionSaveFailed: 'That session could not be saved — browser storage is unavailable.',
 
+  // Deep-research capture (Cornell: Record → Reduce → Recite → Reflect)
+  jotsLabel: 'Jot as you research',
+  jotsPlaceholder: 'One idea per line — Enter adds it',
+  jotDelete: 'Delete this jot',
+  notesLabel: 'Condense your notes',
+  notesPlaceholder: 'Before you speak, boil what you found down to the points you want to make.',
+  reflectLabel: 'Reflect',
+  reflectPlaceholder: 'Where did you stall, or surprise yourself? (optional)',
+  copyMarkdown: 'Copy as Markdown',
+  downloadMarkdown: 'Download .md',
+  copied: 'Copied',
+  copyFailed: 'Copy failed — use download',
+
   // Settings
   settings: 'Settings',
   settingsBlurb: 'Timer lengths for each mode.',
