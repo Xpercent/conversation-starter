@@ -36,10 +36,19 @@ npm run dev      # http://localhost:5173
 
 ## What it does
 
-**Two modes.** *Off the cuff* goes straight from spin to a speech timer, with
+**Three modes.** *Off the cuff* goes straight from spin to a speech timer, with
 What? / So what? / Now what? prompts lighting up at a third and two thirds elapsed.
-*Deep research* gives you a research timer first, then an open-ended pause before
-you start speaking.
+*Deep research* gives you a research timer first — jot one-line notes while you
+read, condense them during an open-ended pause, then speak, reflect, and export
+the whole session as a Markdown note. *Drill* is for working through a word bank:
+short rounds on their own seconds-based timer, and when time is up you rate how
+the speaking went — struggled, okay, smooth — and roll straight into the next
+spin. Ratings measure fluency, never correctness; there is no due queue and
+nothing to owe.
+
+**Sessions leave a trace.** Every finished round is stored in your browser —
+topic, mode, and whatever you captured — as the raw material for progress views
+to come. Like the word bank, it never leaves your machine.
 
 **Three regions**, additive rather than exclusive:
 
