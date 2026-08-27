@@ -87,6 +87,22 @@ let selectable = categories.filter((c) => c.id !== DEEP_RESEARCH_ID);
 export const localeForRegion = (region: Region): Locale => (region === 'china' ? 'zh' : 'en');
 
 /**
+ * Which region a first-time visitor lands on.
+ *
+ * Region drives the interface language as well as the topic pool, so defaulting
+ * everyone to `english` meant a Chinese speaker opened an English app and had
+ * to find the region switch before the thing was usable in their language. That
+ * is a poor first screen for the offline build in particular, which is handed
+ * to people specifically because they are in China.
+ *
+ * First run only — usePersistedSetting reads localStorage before falling back
+ * here, so anyone who has ever chosen a region keeps their choice, including
+ * someone on a zh browser who deliberately picked English.
+ */
+export const defaultRegion = (): Region =>
+  typeof navigator !== 'undefined' && /^zh\b/i.test(navigator.language) ? 'china' : 'english';
+
+/**
  * `deep-research` is both a mode id and a category id. This is the ONLY place
  * that resolves which category is actually in play — nothing else should
  * re-derive it, and the mode must never be inferred from the category.

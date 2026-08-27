@@ -9,6 +9,7 @@ import {
 } from 'react';
 import {
   DEFAULT_CATEGORY_ID,
+  defaultRegion,
   getPool,
   getSelectableCategories,
   getTopicsVersion,
@@ -40,7 +41,7 @@ const REGIONS: Region[] = ['english', 'singapore', 'china'];
 export function App() {
   const [region, setRegion] = usePersistedSetting<Region>(
     'region',
-    'english',
+    defaultRegion(),
     parseOneOf(REGIONS),
   );
   const [mode, setMode] = useState<ModeId>('off-the-cuff');

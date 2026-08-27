@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
+    "build:single": "tsc --noEmit && vite build --mode single && node --experimental-strip-types scripts/bundle-single-file.ts",
+    "build:fonts": "./scripts/build-fonts.sh",
+    "pack:china": "npm run build:single && node --experimental-strip-types scripts/pack-china.ts",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "verify": "node --experimental-strip-types scripts/verify-logic.ts",

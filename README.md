@@ -1,5 +1,7 @@
 # Conversation Starter
 
+**English** · [中文](README.zh-CN.md)
+
 A speaking-practice tool: spin a topic, then talk about it against a timer.
 
 The point of this version is the **word bank**. It ships with ~250 bilingual topics,
@@ -7,6 +9,25 @@ but you are meant to replace them. Upload a spreadsheet or a text file with your
 list — vocabulary for a language class, interview questions, debate motions, prompts
 for a workshop — and it becomes the bank you spin against. Everything is stored in
 your own browser; nothing is uploaded anywhere.
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/main-en.jpg" alt="The English interface, deep research mode, showing a spun topic" width="100%"></td>
+    <td width="50%"><img src="docs/screenshots/main-zh.jpg" alt="The same view in Chinese, with a Chinese topic" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Spin a topic, then talk about it against a timer.</sub></td>
+    <td align="center"><sub>Selecting 中文 switches the interface <em>and</em> the topic pool.</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/topic-bank.jpg" alt="The topic bank panel, with the file upload area and the category list" width="100%"></td>
+    <td width="50%"><img src="docs/screenshots/timers.jpg" alt="The timers panel, with speech and research duration sliders" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Upload a spreadsheet to replace the word bank.</sub></td>
+    <td align="center"><sub>Speech and research timers, in whole minutes.</sub></td>
+  </tr>
+</table>
 
 ```bash
 npm install
@@ -132,7 +153,65 @@ npm run preview   # serve the built output
 ```
 
 Assets are built with relative paths, so `dist/` works on a subpath host like
-GitHub Pages and also when opened directly from disk.
+GitHub Pages. It still needs *a* server, though: browsers refuse to load ES
+modules over `file://`, so double-clicking `dist/index.html` gets you a blank
+page. For a copy that runs off disk, build the single file below.
+
+### One self-contained file
+
+```bash
+npm run build:single   # writes "Conversation Starter.html"
+```
+
+Everything — script, styles, fonts, favicon — is inlined into one HTML file
+that runs by double-clicking, with no server, no install, and **no network
+requests at all**. An inline `<script type="module">` is never fetched, which
+is what sidesteps the `file://` restriction.
+
+This build passes `--mode single` so Vite inlines dynamic imports: the
+`read-excel-file` chunk that the hosted build loads lazily has to be part of
+the one script tag. `scripts/bundle-single-file.ts` verifies the embedded
+payload byte-for-byte and refuses to write a file that still references
+anything remote.
+
+### Offline distribution
+
+```bash
+npm run pack:china   # writes 交谈话题-离线版.zip
+```
+
+GitHub Pages is unreliable-to-blocked on the Chinese mainland, so the way this
+reaches people there is a zip on Baidu Netdisk (百度网盘): the single file
+renamed to `交谈话题.html`, a Chinese tutorial page, a readme, and the font
+licences. Sources live in `packaging/`.
+
+`scripts/pack-china.ts` writes the archive by hand rather than shelling out to
+`zip`, because macOS ships Info-ZIP built without Unicode support — it stores
+UTF-8 filenames but never sets the flag that says so, and Chinese Windows then
+decodes them as GBK and shows 乱码. The script sets the flag and asserts it
+afterwards. The readme gets a UTF-8 BOM and CRLF line endings for the same
+reason: Notepad guesses otherwise.
+
+## Fonts
+
+Fraunces, Outfit and Noto Sans SC are **self-hosted** from `public/fonts/`.
+They used to come from Google Fonts, which made `fonts.googleapis.com` the
+app's only external request — blocked in China, where it stalled on a render-
+blocking stylesheet and then quietly dropped Noto Sans SC 900, the face the
+Chinese topic word is set in. `tokens.css` sets `font-synthesis: none`, so
+there was no synthetic bold to soften the loss.
+
+```bash
+npm run build:fonts   # regenerate the subsets
+```
+
+Fraunces and Outfit stay variable over the weights actually used, subset to
+Latin. Noto Sans SC is pinned to a static 900 and subset to GB2312 level 1
+(the 3755 most common characters) unioned with every character in the shipped
+topic bank — 560KB instead of 17MB. An imported topic using a rarer character
+falls back to PingFang SC or Microsoft YaHei for that glyph.
+
+All three are SIL Open Font License 1.1; see `public/fonts/OFL.txt`.
 
 ## Verifying
 

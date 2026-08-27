@@ -1,0 +1,50 @@
+/*
+ * Self-hosted webfonts. These used to come from fonts.googleapis.com, which is
+ * blocked on the Chinese mainland — a blocking stylesheet request that never
+ * resolves, and then a silent downgrade of the one face that matters most
+ * there. Serving them ourselves is what makes the offline build honest: the
+ * app now issues no network requests at all.
+ *
+ * Regenerate with ./scripts/build-fonts.sh. Licences in public/fonts/OFL.txt.
+ *
+ * Fraunces and Outfit stay variable over their weight ranges — one file each
+ * instead of two and four statics. `font-weight: 500 600` is the range syntax:
+ * it tells the browser this file covers those weights so it interpolates
+ * rather than picking a nearest static. That matters because tokens.css sets
+ * `font-synthesis: none`, so a weight we fail to declare is not faked — it is
+ * simply rendered at the wrong weight.
+ */
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces.woff2") format("woff2-variations");
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/outfit.woff2") format("woff2-variations");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+ * Noto Sans SC carries the Chinese topic word (see the `:root[lang^="zh"]
+ * .reel-phrase` rule in components.css). Pinned to a static 900 — the only
+ * weight asked for, and the variable original is 17MB.
+ *
+ * Subset to GB2312 level 1 plus every character in the shipped topic bank.
+ * An imported topic using a rarer character falls back to PingFang SC /
+ * Microsoft YaHei for that glyph, which is the deliberate cost of a 560KB file
+ * instead of a 5MB one.
+ */
+@font-face {
+  font-family: "Noto Sans SC";
+  src: url("/fonts/noto-sans-sc-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}

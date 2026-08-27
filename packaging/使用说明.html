@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <title>交谈话题 · 使用说明</title>
+    <!--
+      Deliberately self-contained: no webfont, no stylesheet, no script, no
+      image. This file is read by someone who has just unzipped it on a machine
+      behind the GFW, quite possibly with no working connection at all. System
+      CJK faces only — PingFang SC on macOS, Microsoft YaHei on Windows.
+    -->
+    <style>
+      :root {
+        --ink: #f4e8d6;
+        --muted: #f4e8d6ad;
+        --accent: #c8a24c;
+        --accent-bright: #e6cd8f;
+        --surface: #141c33;
+        --page: #0b1226;
+        color-scheme: dark;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 3rem 1.25rem 5rem;
+        background: var(--page);
+        color: var(--ink);
+        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC",
+          system-ui, sans-serif;
+        font-size: 17px;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+      }
+      main { max-width: 44rem; margin: 0 auto; }
+      header { margin-bottom: 3rem; }
+      h1 {
+        font-size: clamp(2rem, 7vw, 2.75rem);
+        margin: 0 0 0.4rem;
+        letter-spacing: -0.02em;
+        color: var(--accent-bright);
+      }
+      .tagline { color: var(--muted); margin: 0; font-size: 1.05rem; }
+      h2 {
+        font-size: 1.35rem;
+        margin: 3rem 0 0.75rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid #f4e8d61f;
+        color: var(--accent);
+        letter-spacing: -0.01em;
+      }
+      h3 { font-size: 1.05rem; margin: 1.75rem 0 0.4rem; color: var(--ink); }
+      p, li { color: var(--ink); }
+      ol, ul { padding-left: 1.5rem; }
+      li { margin-bottom: 0.5rem; }
+      li::marker { color: var(--accent); }
+      strong { color: var(--accent-bright); font-weight: 600; }
+      code, kbd {
+        background: var(--surface);
+        border: 1px solid #f4e8d61f;
+        border-radius: 5px;
+        padding: 0.1em 0.45em;
+        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+        font-size: 0.88em;
+        color: var(--accent-bright);
+        white-space: nowrap;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid #f4e8d614;
+        border-radius: 14px;
+        padding: 1.25rem 1.5rem;
+        margin: 1.5rem 0;
+      }
+      .card p:first-child { margin-top: 0; }
+      .card p:last-child { margin-bottom: 0; }
+      .lead {
+        border-left: 3px solid var(--accent);
+        background: #c8a24c14;
+        padding: 1rem 1.35rem;
+        border-radius: 0 12px 12px 0;
+        margin: 1.75rem 0;
+      }
+      table { border-collapse: collapse; width: 100%; margin: 1.25rem 0; font-size: 0.95rem; }
+      th, td { text-align: left; padding: 0.6rem 0.85rem; border-bottom: 1px solid #f4e8d614; vertical-align: top; }
+      th { color: var(--accent); font-weight: 600; }
+      .faq-q { font-weight: 600; color: var(--accent-bright); margin-bottom: 0.2rem; }
+      .faq + .faq { margin-top: 1.5rem; }
+      footer {
+        margin-top: 4rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #f4e8d61f;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      footer a { color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>交谈话题</h1>
+        <p class="tagline">抽个话题，开口就说。<br />这是一个练习「临场表达」的小工具。</p>
+      </header>
+
+      <div class="lead">
+        <p>
+          <strong>直接双击 <code>交谈话题.html</code> 就能用。</strong>
+          不用安装、不用注册、不用联网。所有内容都在你自己的浏览器里，
+          不会上传到任何服务器。
+        </p>
+      </div>
+
+      <h2>一、怎么打开</h2>
+      <ol>
+        <li>把压缩包解压出来（Windows 建议用 <strong>7-Zip</strong> 或 <strong>Bandizip</strong>，
+          系统自带的解压偶尔会把中文文件名弄成乱码）。</li>
+        <li>双击 <code>交谈话题.html</code>。</li>
+        <li>它会用你默认的浏览器打开。<strong>推荐 Chrome、Edge</strong>，
+          国产的 Chromium 内核浏览器（如夸克、QQ 浏览器）也可以。</li>
+      </ol>
+      <p>
+        整个应用就是这一个文件，字体、程序、音效全都打包在里面了。
+        你可以把它复制到 U 盘、发给朋友、放在桌面上——在哪都能用，断网也能用。
+      </p>
+
+      <h2>二、怎么练</h2>
+      <ol>
+        <li>选一个<strong>话题分类</strong>。</li>
+        <li>点 <strong>抽话题</strong>，转盘会转出一个题目。</li>
+        <li>计时器开始，你就对着这个题目讲。</li>
+      </ol>
+      <p>就这么简单。练的是「拿到一个陌生题目，能不能立刻组织出话来」。</p>
+
+      <h3>两种练习模式</h3>
+      <table>
+        <tr>
+          <th style="width: 26%">模式</th>
+          <th>做什么</th>
+        </tr>
+        <tr>
+          <td><strong>即兴开讲</strong></td>
+          <td>抽完题直接开始演讲计时，几乎不给准备时间，练的就是临场反应。</td>
+        </tr>
+        <tr>
+          <td><strong>深度研究</strong></td>
+          <td>抽完题先给你一段<strong>查资料</strong>的时间，查完点「资料查完了」，
+            再自己决定什么时候点「我准备好了」开始讲。</td>
+        </tr>
+      </table>
+
+      <h3>讲的时候屏幕上的三个提示</h3>
+      <p>演讲计时过程中，会依次亮起三个提示词，帮你把话讲得有结构：</p>
+      <ul>
+        <li><strong>是什么？</strong> —— 一开始就亮着。先说清楚这件事是什么。</li>
+        <li><strong>所以呢？</strong> —— 时间过了三分之一时亮起。说它为什么重要。</li>
+        <li><strong>然后呢？</strong> —— 时间过了三分之二时亮起。说接下来该怎么办。</li>
+      </ul>
+      <p>不用刻意迎合它们，卡壳的时候瞄一眼就有话说了。</p>
+
+      <h2>三、语言和地区</h2>
+      <p>
+        右上角的<strong>地区</strong>开关有三个选项：<code>English</code>、
+        <code>Singapore</code>、<code>中文</code>。
+      </p>
+      <div class="card">
+        <p>
+          <strong>这一个开关同时决定两件事</strong>：界面语言，以及题库内容。
+          选<strong>中文</strong>，界面全部变成中文，题库也换成中文题目
+          （通用题目的中文版 + 169 道大陆本地话题）。
+        </p>
+        <p>
+          如果你的浏览器本来就是中文的，打开时<strong>默认就是中文</strong>，
+          不用手动切。切换过一次之后，它会记住你的选择。
+        </p>
+      </div>
+
+      <h2>四、设置（右上角齿轮）</h2>
+      <ul>
+        <li><strong>演讲</strong> —— 演讲计时长度，1 到 10 分钟。</li>
+        <li><strong>查资料</strong> —— 查资料计时长度，1 到 60 分钟（只在「深度研究」模式下用得上）。</li>
+        <li><strong>静音</strong> —— 关掉转盘的滴答声和结束时的锣声。</li>
+      </ul>
+      <p>设置保存在你这个浏览器里，下次打开还是这些值。</p>
+
+      <h2>五、用自己的话题库</h2>
+      <p>
+        齿轮 → <strong>话题库</strong>，可以逐条添加和删除，
+        也可以<strong>上传一整张表</strong>。
+      </p>
+      <ol>
+        <li>在上传区域点<strong>下载模板</strong>，会得到一个 CSV 文件。</li>
+        <li>模板里已经写好了格式说明和示例，照着填就行——
+          <code>category</code>（分类）、<code>en</code>（英文）、<code>zh</code>（中文）、
+          <code>region</code>（地区）四列，<strong>每一列都可以留空</strong>。</li>
+        <li>填完存成 CSV 或 Excel，拖回上传区域。</li>
+      </ol>
+      <p>
+        支持 <code>.csv</code>、<code>.xlsx</code>、<code>.xls</code>、<code>.tsv</code>、
+        <code>.txt</code>、<code>.json</code>。表头认中文也认英文，
+        写「分类 / 中文 / 地区」它一样看得懂。没有表头也行——
+        那就当作第一列英文、第二列中文。
+      </p>
+      <p>
+        导入时可以选<strong>添加到我的话题库</strong>或<strong>全部替换</strong>，
+        导入前会先给你看一遍会发生什么。
+      </p>
+      <div class="card">
+        <p>
+          <strong>你的话题只存在这个浏览器里。</strong>
+          好处是完全私密；代价是换一台电脑、换一个浏览器、
+          或者清理浏览器数据之后就没了。花时间整理过的题库，
+          记得用话题库页面导出一份备份留着。
+        </p>
+      </div>
+
+      <h2>六、常见问题</h2>
+
+      <div class="faq">
+        <p class="faq-q">手机上打不开怎么办？</p>
+        <p>
+          百度网盘 App <strong>不能直接打开 HTML 文件</strong>，这不是文件的问题。
+          先在网盘里把文件<strong>下载到手机本地</strong>，然后打开手机的
+          「文件管理」找到它，选<strong>用浏览器打开</strong>。
+          iPhone 上更麻烦一些，建议直接在电脑上用。
+        </p>
+      </div>
+
+      <div class="faq">
+        <p class="faq-q">在微信里打开有问题？</p>
+        <p>
+          微信内置的浏览器限制比较多：<strong>导出话题库的下载会被拦掉</strong>，
+          声音也可能放不出来。点右上角「⋯」选<strong>在浏览器打开</strong>，
+          用系统浏览器就正常了。
+        </p>
+      </div>
+
+      <div class="faq">
+        <p class="faq-q">打开是一片空白？</p>
+        <p>
+          确认你双击的是 <code>交谈话题.html</code> 本身，而不是解压出来的别的文件。
+          如果还是空白，换 Chrome 或 Edge 打开试试——
+          很老的浏览器（比如 IE）不支持这个应用。
+        </p>
+      </div>
+
+      <div class="faq">
+        <p class="faq-q">没有声音？</p>
+        <p>
+          浏览器规定必须先有一次点击才允许播放声音，
+          所以<strong>第一次点「抽话题」之后</strong>才会有声音。
+          再检查一下设置里的「静音」有没有被打开。
+        </p>
+      </div>
+
+      <div class="faq">
+        <p class="faq-q">需要联网吗？会不会上传我的数据？</p>
+        <p>
+          <strong>不需要，也不会。</strong>
+          这个文件打开后不向任何服务器发一个请求——字体也打包在里面了。
+          你添加的话题、改的设置，全部只存在你自己浏览器的本地存储里。
+        </p>
+      </div>
+
+      <div class="faq">
+        <p class="faq-q">文件名变成乱码了？</p>
+        <p>
+          Windows 自带的解压工具在老系统上会把 UTF-8 的中文名按 GBK 读，
+          就成了乱码。用 <strong>7-Zip</strong> 或 <strong>Bandizip</strong>
+          重新解压一次即可。文件本身没有损坏。
+        </p>
+      </div>
+
+      <footer>
+        <p>
+          交谈话题（Conversation Starter）· MIT 许可证 ·
+          灵感来自 unprompted.cool<br />
+          内置字体 Fraunces、Outfit、Noto Sans SC 均以 SIL Open Font License 1.1 发布，
+          许可证全文见 <code>OFL.txt</code>。
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

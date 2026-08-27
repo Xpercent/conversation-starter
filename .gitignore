@@ -3,3 +3,10 @@ dist
 .DS_Store
 *.local
 .vite
+
+# Build artifacts from `npm run build:single` / `npm run pack:china`.
+# public/fonts/*.woff2 IS committed — it is a source input, not an artifact.
+Conversation Starter.html
+dist-pack
+交谈话题-离线版/
+*.zip
