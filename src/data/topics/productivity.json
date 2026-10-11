@@ -1,0 +1,132 @@
+{
+  "id": "productivity",
+  "emoji": "⚡",
+  "label": {
+    "en": "Productivity",
+    "zh": "生产力"
+  },
+  "base": [
+    {
+      "en": "Deep work",
+      "zh": "深度工作"
+    },
+    {
+      "en": "Context switching",
+      "zh": "情境切换"
+    },
+    {
+      "en": "Inbox zero",
+      "zh": "收件箱清零"
+    },
+    {
+      "en": "Time boxing",
+      "zh": "时间盒"
+    },
+    {
+      "en": "Parkinson's law",
+      "zh": "帕金森定律"
+    },
+    {
+      "en": "Two-minute rule",
+      "zh": "两分钟法则"
+    },
+    {
+      "en": "Batching",
+      "zh": "批量处理"
+    },
+    {
+      "en": "Energy management",
+      "zh": "能量管理"
+    },
+    {
+      "en": "Done is better",
+      "zh": "完成胜过完美"
+    },
+    {
+      "en": "Open loops",
+      "zh": "未闭环事项"
+    },
+    {
+      "en": "Focus mode",
+      "zh": "专注模式"
+    },
+    {
+      "en": "Meeting tax",
+      "zh": "会议税"
+    },
+    {
+      "en": "Single-tasking",
+      "zh": "单任务"
+    },
+    {
+      "en": "Morning pages",
+      "zh": "晨间笔记"
+    },
+    {
+      "en": "Shutdown ritual",
+      "zh": "下班仪式"
+    },
+    {
+      "en": "Second brain",
+      "zh": "第二大脑"
+    },
+    {
+      "en": "Procrastination",
+      "zh": "拖延症"
+    },
+    {
+      "en": "Friction removal",
+      "zh": "消除阻力"
+    },
+    {
+      "en": "Attention residue",
+      "zh": "注意力残留"
+    },
+    {
+      "en": "Protected hours",
+      "zh": "受保护时间"
+    },
+    {
+      "en": "Output over hours",
+      "zh": "产出重于时长"
+    },
+    {
+      "en": "Distraction diet",
+      "zh": "分心饮食"
+    }
+  ],
+  "extra": {
+    "singapore": [
+      "Kiasu culture at work",
+      "Bell curve ranking",
+      "Reservist disruption",
+      "PIP",
+      "Hybrid work debates",
+      "Zoom fatigue",
+      "Return-to-office",
+      "Quiet quitting (SG context)",
+      "Chope good seats",
+      "Lunch queue rush",
+      "SG public holiday",
+      "Productivity with GrabFood",
+      "Side hustle in SG"
+    ],
+    "china": [
+      "摸鱼",
+      "划水",
+      "PUA",
+      "汇报文化",
+      "日报周报",
+      "加班文化",
+      "弹性工作",
+      "带薪休假",
+      "团建",
+      "职场内耗",
+      "OKR",
+      "KPI",
+      "背锅侠",
+      "飞书 / 钉钉",
+      "居家办公"
+    ]
+  }
+}

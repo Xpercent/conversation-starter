@@ -64,8 +64,12 @@ for qu in range(16, 56):
         except UnicodeDecodeError:
             pass
 
-# Everything we actually ship.
-for rel in ('src/data/topics.json', 'src/i18n/zh.ts', 'src/i18n/en.ts'):
+# Everything we actually ship. The topic bank is one file per category, so the
+# whole folder is scanned rather than the manifest — a glyph in a file nothing
+# loads yet still costs nothing to carry, and a missed one flips mid-phrase.
+for path in sorted((root / 'src/data/topics').glob('*.json')):
+    chars.update(path.read_text(encoding='utf-8'))
+for rel in ('src/i18n/zh.ts', 'src/i18n/en.ts'):
     chars.update((root / rel).read_text(encoding='utf-8'))
 
 # CJK punctuation and fullwidth forms, so 。、「」（） never flip face.

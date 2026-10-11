@@ -6,7 +6,7 @@ import {
   validateSessions,
   type SessionRecord,
 } from '../src/lib/session.ts';
-import { readFileSync } from 'node:fs';
+import { listedTopicFiles, loadShippedBank, topicFilesOnDisk } from './topicBank.ts';
 
 let fails = 0;
 const check = (name: string, got: unknown, want: unknown) => {
@@ -79,8 +79,11 @@ check('filename is date-first and sanitised',
   sessionFileName(deepRecord), '2026-08-27 The best advice ignore it.md');
 
 // --- Topic bank integrity (mirrors the module-load assertions) ---
-const cats = JSON.parse(readFileSync('src/data/topics.json', 'utf8'));
+const cats = loadShippedBank();
 check('11 categories', cats.length, 11);
+const listed = listedTopicFiles();
+check('manifest lists every topic file', listed.slice().sort(), topicFilesOnDisk());
+check('no repeats in the manifest', new Set(listed).size, listed.length);
 const badPairs = cats.flatMap((c: any) => c.base.filter((p: any) => !p.en || !p.zh));
 check('every base pair bilingual', badPairs.length, 0);
 const ids = new Set(cats.map((c: any) => c.id));

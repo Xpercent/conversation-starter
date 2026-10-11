@@ -1,0 +1,134 @@
+{
+  "id": "literature",
+  "emoji": "📚",
+  "label": {
+    "en": "Literature",
+    "zh": "文学"
+  },
+  "base": [
+    {
+      "en": "1984",
+      "zh": "1984"
+    },
+    {
+      "en": "Moby-Dick",
+      "zh": "白鲸"
+    },
+    {
+      "en": "Pride and Prejudice",
+      "zh": "傲慢与偏见"
+    },
+    {
+      "en": "One Hundred Years of Solitude",
+      "zh": "百年孤独"
+    },
+    {
+      "en": "The Great Gatsby",
+      "zh": "了不起的盖茨比"
+    },
+    {
+      "en": "Crime and Punishment",
+      "zh": "罪与罚"
+    },
+    {
+      "en": "To Kill a Mockingbird",
+      "zh": "杀死一只知更鸟"
+    },
+    {
+      "en": "Brave New World",
+      "zh": "美丽新世界"
+    },
+    {
+      "en": "The Odyssey",
+      "zh": "奥德赛"
+    },
+    {
+      "en": "Frankenstein",
+      "zh": "弗兰肯斯坦"
+    },
+    {
+      "en": "Don Quixote",
+      "zh": "堂吉诃德"
+    },
+    {
+      "en": "Beloved",
+      "zh": "宠儿"
+    },
+    {
+      "en": "The Catcher in the Rye",
+      "zh": "麦田里的守望者"
+    },
+    {
+      "en": "War and Peace",
+      "zh": "战争与和平"
+    },
+    {
+      "en": "Slaughterhouse-Five",
+      "zh": "五号屠场"
+    },
+    {
+      "en": "Ernest Hemingway",
+      "zh": "海明威"
+    },
+    {
+      "en": "Franz Kafka",
+      "zh": "卡夫卡"
+    },
+    {
+      "en": "Fyodor Dostoevsky",
+      "zh": "陀思妥耶夫斯基"
+    },
+    {
+      "en": "Edgar Allan Poe",
+      "zh": "爱伦·坡"
+    },
+    {
+      "en": "James Joyce",
+      "zh": "乔伊斯"
+    },
+    {
+      "en": "Emily Dickinson",
+      "zh": "狄金森"
+    },
+    {
+      "en": "Mark Twain",
+      "zh": "马克·吐温"
+    }
+  ],
+  "extra": {
+    "singapore": [
+      "Singlish poetry",
+      "Edwin Thumboo",
+      "Lee Tzu Pheng",
+      "Alfian Sa'at",
+      "Haresh Sharma",
+      "Catherine Lim",
+      "S. Rajaratnam",
+      "Fictional works about SG",
+      "Kampung Spirit stories",
+      "Singaporean playwrights",
+      "Literature in CMIO languages",
+      "Poetry in Malay",
+      "Chinese diaspora novels"
+    ],
+    "china": [
+      "红楼梦",
+      "西游记",
+      "水浒传",
+      "三国演义",
+      "鲁迅",
+      "金庸",
+      "茶馆",
+      "围城",
+      "活着",
+      "诗经",
+      "唐诗三百首",
+      "宋词",
+      "三体",
+      "莫言",
+      "张爱玲",
+      "边城",
+      "平凡的世界"
+    ]
+  }
+}

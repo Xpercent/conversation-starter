@@ -1,0 +1,134 @@
+{
+  "id": "entrepreneurship",
+  "emoji": "🚀",
+  "label": {
+    "en": "Entrepreneurship",
+    "zh": "创业"
+  },
+  "base": [
+    {
+      "en": "Skin in the game",
+      "zh": "利益绑定"
+    },
+    {
+      "en": "First customer",
+      "zh": "第一个客户"
+    },
+    {
+      "en": "Cash is oxygen",
+      "zh": "现金是氧气"
+    },
+    {
+      "en": "Founder mode",
+      "zh": "创始人模式"
+    },
+    {
+      "en": "Saying no",
+      "zh": "学会拒绝"
+    },
+    {
+      "en": "Distribution",
+      "zh": "渠道分发"
+    },
+    {
+      "en": "Unit economics",
+      "zh": "单位经济"
+    },
+    {
+      "en": "Moat",
+      "zh": "护城河"
+    },
+    {
+      "en": "Bootstrapping",
+      "zh": "自筹资金"
+    },
+    {
+      "en": "Product-market fit",
+      "zh": "产品市场匹配"
+    },
+    {
+      "en": "Reputation capital",
+      "zh": "声誉资本"
+    },
+    {
+      "en": "Sweat equity",
+      "zh": "血汗股权"
+    },
+    {
+      "en": "Hustle vs leverage",
+      "zh": "苦干 vs 杠杆"
+    },
+    {
+      "en": "Solo founder",
+      "zh": "单人创始人"
+    },
+    {
+      "en": "Building in public",
+      "zh": "公开构建"
+    },
+    {
+      "en": "Fail fast",
+      "zh": "快速失败"
+    },
+    {
+      "en": "Customer obsession",
+      "zh": "用户至上"
+    },
+    {
+      "en": "Pivoting",
+      "zh": "转型"
+    },
+    {
+      "en": "Trust as currency",
+      "zh": "信任即货币"
+    },
+    {
+      "en": "Overnight success myth",
+      "zh": "一夜成名神话"
+    },
+    {
+      "en": "Side hustle ceiling",
+      "zh": "副业天花板"
+    },
+    {
+      "en": "Ship imperfect",
+      "zh": "先做再完美"
+    }
+  ],
+  "extra": {
+    "singapore": [
+      "Grab a Grab",
+      "Unicorn dreams in small market",
+      "EDG grants",
+      "Tech in shape",
+      "Regionalising from SG",
+      "Smart Nation",
+      "Startup SG",
+      "Co-working spaces",
+      "Hiring local talent",
+      "Government grants",
+      "Steep learning curve",
+      "Small domestic market",
+      "Regional HQ"
+    ],
+    "china": [
+      "内卷",
+      "私域流量",
+      "下沉市场",
+      "卷王",
+      "996",
+      "大厂",
+      "35岁危机",
+      "OKR",
+      "KPI",
+      "融资",
+      "天使轮",
+      "A轮",
+      "PPT创业",
+      "风口",
+      "猪都能飞",
+      "互联网思维",
+      "闭环"
+    ]
+  }
+}

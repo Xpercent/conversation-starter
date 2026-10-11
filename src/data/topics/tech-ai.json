@@ -1,0 +1,131 @@
+{
+  "id": "tech-ai",
+  "emoji": "🤖",
+  "label": {
+    "en": "Tech / AI",
+    "zh": "科技 / AI"
+  },
+  "base": [
+    {
+      "en": "Black box",
+      "zh": "黑箱"
+    },
+    {
+      "en": "Training data",
+      "zh": "训练数据"
+    },
+    {
+      "en": "Prompt engineering",
+      "zh": "提示工程"
+    },
+    {
+      "en": "Hallucination",
+      "zh": "幻觉"
+    },
+    {
+      "en": "Model drift",
+      "zh": "模型漂移"
+    },
+    {
+      "en": "Latency",
+      "zh": "延迟"
+    },
+    {
+      "en": "API call",
+      "zh": "API调用"
+    },
+    {
+      "en": "Open source",
+      "zh": "开源"
+    },
+    {
+      "en": "Fine-tuning",
+      "zh": "微调"
+    },
+    {
+      "en": "Context window",
+      "zh": "上下文窗口"
+    },
+    {
+      "en": "Automation bias",
+      "zh": "自动化偏见"
+    },
+    {
+      "en": "Data moat",
+      "zh": "数据护城河"
+    },
+    {
+      "en": "Edge case",
+      "zh": "边缘案例"
+    },
+    {
+      "en": "Tech debt",
+      "zh": "技术债务"
+    },
+    {
+      "en": "Single point of failure",
+      "zh": "单点故障"
+    },
+    {
+      "en": "Cloud vs local",
+      "zh": "云端 vs 本地"
+    },
+    {
+      "en": "Inference cost",
+      "zh": "推理成本"
+    },
+    {
+      "en": "Synthetic data",
+      "zh": "合成数据"
+    },
+    {
+      "en": "Feedback loop",
+      "zh": "反馈循环"
+    },
+    {
+      "en": "Zero-shot",
+      "zh": "零样本"
+    },
+    {
+      "en": "Attention mechanism",
+      "zh": "注意力机制"
+    },
+    {
+      "en": "Agentic workflow",
+      "zh": "智能体工作流"
+    }
+  ],
+  "extra": {
+    "singapore": [
+      "Smart Nation sensors",
+      "AI for public good",
+      "Digital government",
+      "Data privacy laws",
+      "Cybersecurity in SG",
+      "5G rollout",
+      "Fintech AI",
+      "Edge AI",
+      "Autonomous vehicles trials",
+      "AI ethics in Asia",
+      "Local tech talent",
+      "Remote work tech"
+    ],
+    "china": [
+      "国产大模型",
+      "算法备案",
+      "数据安全法",
+      "AI换脸",
+      "人脸识别",
+      "智慧城市",
+      "5G应用",
+      "芯片卡脖子",
+      "量化交易",
+      "Python入门",
+      "互联网大厂裁员",
+      "数字孪生",
+      "AI绘画",
+      "自动驾驶",
+      "机器人替代"
+    ]
+  }
+}

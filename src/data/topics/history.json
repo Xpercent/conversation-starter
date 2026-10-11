@@ -1,0 +1,156 @@
+{
+  "id": "history",
+  "emoji": "📜",
+  "label": {
+    "en": "History",
+    "zh": "历史"
+  },
+  "base": [
+    {
+      "en": "Fall of the Berlin Wall",
+      "zh": "柏林墙倒塌"
+    },
+    {
+      "en": "Moon landing",
+      "zh": "登月"
+    },
+    {
+      "en": "Invention of the printing press",
+      "zh": "印刷术发明"
+    },
+    {
+      "en": "Signing of the Magna Carta",
+      "zh": "大宪章签署"
+    },
+    {
+      "en": "Storming of the Bastille",
+      "zh": "攻占巴士底狱"
+    },
+    {
+      "en": "First Olympic Games",
+      "zh": "第一届奥运会"
+    },
+    {
+      "en": "Discovery of penicillin",
+      "zh": "青霉素发现"
+    },
+    {
+      "en": "Wright brothers' first flight",
+      "zh": "莱特兄弟首飞"
+    },
+    {
+      "en": "Fall of Constantinople",
+      "zh": "君士坦丁堡陷落"
+    },
+    {
+      "en": "Boston Tea Party",
+      "zh": "波士顿倾茶事件"
+    },
+    {
+      "en": "March on Washington",
+      "zh": "华盛顿大游行"
+    },
+    {
+      "en": "Opening of the Silk Road",
+      "zh": "丝绸之路开通"
+    },
+    {
+      "en": "Chernobyl disaster",
+      "zh": "切尔诺贝利事故"
+    },
+    {
+      "en": "Completion of the Great Wall",
+      "zh": "长城建成"
+    },
+    {
+      "en": "Treaty of Versailles",
+      "zh": "凡尔赛条约"
+    },
+    {
+      "en": "First photograph",
+      "zh": "第一张照片"
+    },
+    {
+      "en": "Suez Canal opening",
+      "zh": "苏伊士运河通航"
+    },
+    {
+      "en": "Abolition of slavery in Britain",
+      "zh": "英国废除奴隶制"
+    },
+    {
+      "en": "Launch of Sputnik",
+      "zh": "斯普特尼克号发射"
+    },
+    {
+      "en": "Renaissance in Florence",
+      "zh": "佛罗伦萨文艺复兴"
+    },
+    {
+      "en": "Stock market crash of 1929",
+      "zh": "1929年股市崩盘"
+    },
+    {
+      "en": "Nelson Mandela's release",
+      "zh": "曼德拉获释"
+    },
+    {
+      "en": "Building of the pyramids",
+      "zh": "金字塔建造"
+    },
+    {
+      "en": "First women's suffrage victory",
+      "zh": "首次妇女选举权胜利"
+    },
+    {
+      "en": "Atomic bomb on Hiroshima",
+      "zh": "广岛原子弹爆炸"
+    },
+    {
+      "en": "Voyages of Zheng He",
+      "zh": "郑和下西洋"
+    },
+    {
+      "en": "Fall of the Roman Empire",
+      "zh": "罗马帝国灭亡"
+    },
+    {
+      "en": "Invention of the internet",
+      "zh": "互联网发明"
+    }
+  ],
+  "extra": {
+    "singapore": [
+      "Independence from Malaysia (1965)",
+      "Singapore merger with Malaysia",
+      "Operation Coldstore",
+      "National Service introduction",
+      "First MRT line",
+      "Asian Financial Crisis 1997",
+      "SARS outbreak 2003",
+      "Opening of Changi Airport",
+      "Jurong industrial estate",
+      "Housing boom",
+      "Independence Day 9 Aug",
+      "Lee Kuan Yew's vision",
+      "Singapore's 50th birthday SG50"
+    ],
+    "china": [
+      "鸦片战争",
+      "辛亥革命",
+      "新中国成立",
+      "改革开放",
+      "抗美援朝",
+      "两弹一星",
+      "文化大革命",
+      "恢复高考",
+      "香港回归",
+      "加入WTO",
+      "汶川地震",
+      "北京奥运",
+      "脱贫攻坚",
+      "撤侨",
+      "南水北调"
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "id": "general",
+  "emoji": "✦",
+  "label": {
+    "en": "General",
+    "zh": "日常"
+  },
+  "base": [
+    {
+      "en": "Nostalgia",
+      "zh": "怀旧"
+    },
+    {
+      "en": "Comfort Zone",
+      "zh": "舒适区"
+    },
+    {
+      "en": "Muscle Memory",
+      "zh": "肌肉记忆"
+    },
+    {
+      "en": "Commute",
+      "zh": "通勤"
+    },
+    {
+      "en": "Spam Call",
+      "zh": "骚扰电话"
+    },
+    {
+      "en": "Voicemail",
+      "zh": "语音信箱"
+    },
+    {
+      "en": "Doorbell",
+      "zh": "门铃"
+    },
+    {
+      "en": "Hand-Me-Down",
+      "zh": "二手旧物"
+    },
+    {
+      "en": "Bookshelf",
+      "zh": "书架"
+    },
+    {
+      "en": "Junk Drawer",
+      "zh": "杂物抽屉"
+    },
+    {
+      "en": "Brainrot",
+      "zh": "脑腐"
+    },
+    {
+      "en": "Corporate greed",
+      "zh": "企业贪婪"
+    },
+    {
+      "en": "Mirrors",
+      "zh": "镜子"
+    },
+    {
+      "en": "Waiting Room",
+      "zh": "候诊室"
+    },
+    {
+      "en": "Autocorrect",
+      "zh": "自动纠错"
+    },
+    {
+      "en": "Group Chat",
+      "zh": "群聊"
+    },
+    {
+      "en": "Leftovers",
+      "zh": "剩菜"
+    },
+    {
+      "en": "Traffic Light",
+      "zh": "红绿灯"
+    }
+  ],
+  "extra": {
+    "singapore": [
+      "Kiasu",
+      "Chope seat with tissue",
+      "Void deck",
+      "HDB corridor",
+      "Hawker centre queue",
+      "CMIO",
+      "NS reservist",
+      "PSLE stress",
+      "COE",
+      "GST vouchers",
+      "MRT peak hour",
+      "Sengkang / Punggol",
+      "Orchard Road Christmas",
+      "Wet market",
+      "Kopitiam"
+    ],
+    "china": [
+      "拼多多砍一刀",
+      "朋友圈三天可见",
+      "拼车",
+      "催婚",
+      "内卷",
+      "断亲",
+      "社死",
+      "丁克",
+      "烂尾楼",
+      "扫码点餐",
+      "刷短视频",
+      "薅羊毛",
+      "房奴",
+      "鸡娃",
+      "直播带货"
+    ]
+  }
+}

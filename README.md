@@ -132,7 +132,11 @@ correctly rather than as mojibake; the importer strips it back off.
 reads back unchanged. **Reset to the original topics** restores the shipped bank.
 
 To change the topics that ship with the project rather than just your own copy,
-export as JSON and replace `src/data/topics.json`.
+edit the files the shipped bank is made of: one JSON file per category in
+`src/data/topics/`, and `src/data/topics.json`, which lists which of those files
+load and in what order the interface shows them. Adding a category means adding
+the file and naming it in the manifest; a name with no file behind it fails at
+startup, and `npm run verify` checks the manifest against the folder.
 
 ## Where your topics live
 

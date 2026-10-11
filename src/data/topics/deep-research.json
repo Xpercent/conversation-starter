@@ -1,0 +1,146 @@
+{
+  "id": "deep-research",
+  "emoji": "🔎",
+  "label": {
+    "en": "Deep Research",
+    "zh": "深度研究"
+  },
+  "base": [
+    {
+      "en": "The Ben Franklin effect",
+      "zh": "富兰克林效应"
+    },
+    {
+      "en": "The illusion of transparency",
+      "zh": "透明幻觉"
+    },
+    {
+      "en": "Affective forecasting (impact bias)",
+      "zh": "情感预测（影响偏差）"
+    },
+    {
+      "en": "The focusing illusion",
+      "zh": "聚焦错觉"
+    },
+    {
+      "en": "The end-of-history illusion",
+      "zh": "历史终结错觉"
+    },
+    {
+      "en": "Ironic process theory",
+      "zh": "白熊效应/反弹"
+    },
+    {
+      "en": "Affect labeling",
+      "zh": "情绪标注"
+    },
+    {
+      "en": "Schelling points",
+      "zh": "谢林点"
+    },
+    {
+      "en": "Tit-for-tat (and why nice strategies win)",
+      "zh": "以牙还牙（友善策略胜）"
+    },
+    {
+      "en": "The war of attrition",
+      "zh": "消耗战"
+    },
+    {
+      "en": "Costly signaling",
+      "zh": "昂贵信号"
+    },
+    {
+      "en": "The volunteer's dilemma",
+      "zh": "志愿者困境"
+    },
+    {
+      "en": "The stag hunt",
+      "zh": "猎鹿博弈"
+    },
+    {
+      "en": "The ostrich effect",
+      "zh": "鸵鸟效应"
+    },
+    {
+      "en": "The house money effect",
+      "zh": "赌场资金效应"
+    },
+    {
+      "en": "The compromise effect",
+      "zh": "折中效应"
+    },
+    {
+      "en": "The denomination effect",
+      "zh": "面额效应"
+    },
+    {
+      "en": "The prosecutor's fallacy",
+      "zh": "检察官谬误"
+    },
+    {
+      "en": "Simpson's paradox",
+      "zh": "辛普森悖论"
+    },
+    {
+      "en": "Berkson's paradox",
+      "zh": "伯克森悖论"
+    },
+    {
+      "en": "The law of small numbers",
+      "zh": "小数定律"
+    },
+    {
+      "en": "The false positive paradox",
+      "zh": "假阳性悖论"
+    },
+    {
+      "en": "The Lindy effect",
+      "zh": "林迪效应"
+    },
+    {
+      "en": "The Paradox of Choice",
+      "zh": "选择悖论"
+    },
+    {
+      "en": "Fundamental attribution error",
+      "zh": "基本归因谬误"
+    }
+  ],
+  "extra": {
+    "singapore": [
+      "Meritocracy debate",
+      "Kiasu-ism as behavioural economics",
+      "Sandwich class",
+      "Race CMIO model",
+      "Pragmatism as national ideology",
+      "Asian values vs Western liberalism",
+      "Safe space vs free speech in SG",
+      "Public housing as social engineering",
+      "National service as social glue",
+      "5 Cs (Cash, Car, Credit Card, Condo, Country Club)",
+      "Foreign talent debate",
+      "Elderly in ageing society",
+      "Garden City ideology",
+      "Multiracialism"
+    ],
+    "china": [
+      "中庸之道",
+      "田忌赛马",
+      "塞翁失马",
+      "破窗效应",
+      "面子文化",
+      "关系学",
+      "酒桌文化",
+      "剩女标签",
+      "虎妈教育",
+      "集体主义与个人主义",
+      "差序格局",
+      "无为而治",
+      "阴阳平衡",
+      "人情社会",
+      "熟人信任",
+      "学历倒挂"
+    ]
+  }
+}

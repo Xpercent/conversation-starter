@@ -1,0 +1,119 @@
+{
+  "id": "startups",
+  "emoji": "🌱",
+  "label": {
+    "en": "Startups",
+    "zh": "初创"
+  },
+  "base": [
+    {
+      "en": "Minimum viable product",
+      "zh": "最小可行产品"
+    },
+    {
+      "en": "Runway",
+      "zh": "跑道"
+    },
+    {
+      "en": "Seed round",
+      "zh": "种子轮"
+    },
+    {
+      "en": "Growth hacking",
+      "zh": "增长黑客"
+    },
+    {
+      "en": "Churn",
+      "zh": "流失率"
+    },
+    {
+      "en": "Network effects",
+      "zh": "网络效应"
+    },
+    {
+      "en": "Burn rate",
+      "zh": "烧钱率"
+    },
+    {
+      "en": "Traction",
+      "zh": "用户牵引力"
+    },
+    {
+      "en": "Pivot",
+      "zh": "转型"
+    },
+    {
+      "en": "Founder-market fit",
+      "zh": "创始人-市场匹配"
+    },
+    {
+      "en": "Beachhead market",
+      "zh": "滩头市场"
+    },
+    {
+      "en": "Viral loop",
+      "zh": "病毒循环"
+    },
+    {
+      "en": "Demo day",
+      "zh": "演示日"
+    },
+    {
+      "en": "Product debt",
+      "zh": "产品债务"
+    },
+    {
+      "en": "Early adopters",
+      "zh": "早期用户"
+    },
+    {
+      "en": "Scaling prematurely",
+      "zh": "过早扩张"
+    },
+    {
+      "en": "Acqui-hire",
+      "zh": "收购式招聘"
+    },
+    {
+      "en": "Moonshot",
+      "zh": "登月计划"
+    },
+    {
+      "en": "Zero to one",
+      "zh": "从0到1"
+    }
+  ],
+  "extra": {
+    "singapore": [
+      "SEA Ltd",
+      "Super app ambition",
+      "Regional expansion",
+      "Fintech sandbox",
+      "AI adoption in SMEs",
+      "Smart City innovations",
+      "E-commerce logistics",
+      "Digital banking",
+      "E-wallets",
+      "Localized product",
+      "Government-linked corporate",
+      "Ecosystem builders"
+    ],
+    "china": [
+      "产业互联网",
+      "硬科技",
+      "下沉市场",
+      "私域",
+      "快鱼吃慢鱼",
+      "融资难",
+      "独角兽",
+      "BAT",
+      "TMD",
+      "共享经济",
+      "P2P爆雷",
+      "社区团购",
+      "直播电商",
+      "风口论",
+      "生态化反"
+    ]
+  }
+}

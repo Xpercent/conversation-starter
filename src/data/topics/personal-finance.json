@@ -1,0 +1,129 @@
+{
+  "id": "personal-finance",
+  "emoji": "💰",
+  "label": {
+    "en": "Personal finance",
+    "zh": "个人理财"
+  },
+  "base": [
+    {
+      "en": "Emergency fund",
+      "zh": "应急基金"
+    },
+    {
+      "en": "Compound interest",
+      "zh": "复利"
+    },
+    {
+      "en": "Lifestyle creep",
+      "zh": "消费升级"
+    },
+    {
+      "en": "Sunk cost",
+      "zh": "沉没成本"
+    },
+    {
+      "en": "Opportunity cost",
+      "zh": "机会成本"
+    },
+    {
+      "en": "Net worth",
+      "zh": "净资产"
+    },
+    {
+      "en": "Cash flow",
+      "zh": "现金流"
+    },
+    {
+      "en": "High-interest debt",
+      "zh": "高息债务"
+    },
+    {
+      "en": "Rainy day",
+      "zh": "不时之需"
+    },
+    {
+      "en": "Diversification",
+      "zh": "分散投资"
+    },
+    {
+      "en": "Dollar-cost averaging",
+      "zh": "定投"
+    },
+    {
+      "en": "Liquidity",
+      "zh": "流动性"
+    },
+    {
+      "en": "Burn rate",
+      "zh": "烧钱率"
+    },
+    {
+      "en": "Safety net",
+      "zh": "安全网"
+    },
+    {
+      "en": "Credit score",
+      "zh": "信用评分"
+    },
+    {
+      "en": "Time value of money",
+      "zh": "货币时间价值"
+    },
+    {
+      "en": "Risk tolerance",
+      "zh": "风险承受力"
+    },
+    {
+      "en": "Idle cash",
+      "zh": "闲置现金"
+    },
+    {
+      "en": "Subscription trap",
+      "zh": "订阅陷阱"
+    },
+    {
+      "en": "Financial runway",
+      "zh": "财务跑道"
+    },
+    {
+      "en": "Delayed gratification",
+      "zh": "延迟满足"
+    }
+  ],
+  "extra": {
+    "singapore": [
+      "CPF",
+      "HDB upgrading",
+      "BTO vs resale",
+      "Singapore Savings Bonds",
+      "High COE prices",
+      "Wealth management in SG",
+      "Retirement adequacy",
+      "MediSave",
+      "SRS",
+      "Investment property",
+      "Car as liability",
+      "GST hike",
+      "Insurance premiums",
+      "Emergency cash in SGD"
+    ],
+    "china": [
+      "余额宝",
+      "房贷",
+      "六个钱包",
+      "消费降级",
+      "家庭资产配置",
+      "以房养老",
+      "医保余额",
+      "公积金",
+      "信用贷",
+      "花呗分期",
+      "宝宝理财",
+      "中年财务危机",
+      "养老焦虑",
+      "彩礼",
+      "拼单凑单"
+    ]
+  }
+}

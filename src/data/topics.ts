@@ -1,4 +1,4 @@
-import raw from './topics.json';
+import manifest from './topics.json';
 import { loadStoredBank } from '../lib/topicsStore';
 import { validateBank } from '../lib/topicsSchema';
 
@@ -21,8 +21,33 @@ export interface Category {
   extra: { singapore: string[]; china: string[] };
 }
 
+/*
+ * The shipped bank is one JSON file per category under src/data/topics/, and
+ * ./topics.json is the manifest naming which files make it up — in the order
+ * the interface shows them, which is the only place that order is decided.
+ *
+ * `import.meta.glob` with `eager` is resolved at build time, so the topic files
+ * are inlined into the bundle instead of fetched. That keeps the bank available
+ * synchronously for module init, and keeps the offline single-file build honest:
+ * opened over file://, a fetch of a sibling JSON would be blocked outright.
+ */
+const topicFiles = import.meta.glob<Category>('./topics/*.json', {
+  eager: true,
+  import: 'default',
+});
+
+const byFileName = new Map(
+  Object.entries(topicFiles).map(([path, category]) => [path.split('/').pop() ?? path, category]),
+);
+
 /** The bank as shipped — the fallback, and what "Reset to defaults" restores. */
-export const DEFAULT_CATEGORIES = raw as Category[];
+export const DEFAULT_CATEGORIES: Category[] = manifest.files.map((file) => {
+  const category = byFileName.get(file);
+  if (!category) {
+    throw new Error(`topics.json lists ${file}, but src/data/topics/${file} is not there to load`);
+  }
+  return category;
+});
 
 /**
  * The bank is mutable at runtime — the editor and the file import both write
@@ -68,13 +93,23 @@ export function replaceCategories(next: Category[]): void {
  * Structural invariants, asserted at module load rather than in a test:
  * a test can be skipped, module initialisation cannot.
  *
- * This checks the SHIPPED bank only. A malformed topics.json is our mistake and
- * should fail loudly; a malformed bank in someone's browser is their import and
- * has already been rejected by `loadStoredBank`, quietly, before reaching here.
+ * This checks the SHIPPED bank only. A malformed topic file or a manifest that
+ * has drifted from the folder is our mistake and should fail loudly; a malformed
+ * bank in someone's browser is their import and has already been rejected by
+ * `loadStoredBank`, quietly, before reaching here.
  */
 if (import.meta.env.DEV) {
   const result = validateBank(DEFAULT_CATEGORIES);
-  if (!result.ok) throw new Error(`Bundled topics.json is invalid:\n${result.errors.join('\n')}`);
+  if (!result.ok) throw new Error(`Bundled topic bank is invalid:\n${result.errors.join('\n')}`);
+
+  // A file the manifest never names is invisible at runtime, so the only record
+  // of it is a confusing diff. Either direction is a manifest that needs updating.
+  const unlisted = [...byFileName.keys()].filter((f) => !manifest.files.includes(f));
+  if (unlisted.length > 0) {
+    throw new Error(
+      `src/data/topics/ holds files that topics.json does not list:\n${unlisted.map((f) => `  ${f}`).join('\n')}`,
+    );
+  }
 }
 
 /** The `deep-research` category is reachable only via the mode of the same name. */

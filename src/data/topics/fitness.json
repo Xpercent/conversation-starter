@@ -1,0 +1,152 @@
+{
+  "id": "fitness",
+  "emoji": "💪",
+  "label": {
+    "en": "Fitness",
+    "zh": "健身"
+  },
+  "base": [
+    {
+      "en": "Progressive overload",
+      "zh": "渐进超负荷"
+    },
+    {
+      "en": "Rest day",
+      "zh": "休息日"
+    },
+    {
+      "en": "Muscle memory",
+      "zh": "肌肉记忆"
+    },
+    {
+      "en": "Form over ego",
+      "zh": "动作优先"
+    },
+    {
+      "en": "Plateau",
+      "zh": "平台期"
+    },
+    {
+      "en": "Warm-up",
+      "zh": "热身"
+    },
+    {
+      "en": "Consistency beats intensity",
+      "zh": "坚持胜于强度"
+    },
+    {
+      "en": "Deload week",
+      "zh": "减载周"
+    },
+    {
+      "en": "Range of motion",
+      "zh": "活动范围"
+    },
+    {
+      "en": "Recovery debt",
+      "zh": "恢复赤字"
+    },
+    {
+      "en": "Personal record",
+      "zh": "个人记录"
+    },
+    {
+      "en": "Body composition",
+      "zh": "身体成分"
+    },
+    {
+      "en": "Cardio base",
+      "zh": "有氧基础"
+    },
+    {
+      "en": "Mobility",
+      "zh": "活动度"
+    },
+    {
+      "en": "Soreness as signal",
+      "zh": "酸痛即信号"
+    },
+    {
+      "en": "Showing up",
+      "zh": "到场"
+    },
+    {
+      "en": "Breathing under load",
+      "zh": "负重呼吸"
+    },
+    {
+      "en": "Mind-muscle connection",
+      "zh": "念动一致"
+    },
+    {
+      "en": "Volume vs intensity",
+      "zh": "容量 vs 强度"
+    },
+    {
+      "en": "Habit stacking",
+      "zh": "习惯叠加"
+    },
+    {
+      "en": "Gym intimidation",
+      "zh": "健身社交恐惧"
+    },
+    {
+      "en": "Maintenance phase",
+      "zh": "维持期"
+    },
+    {
+      "en": "Functional strength",
+      "zh": "功能性力量"
+    },
+    {
+      "en": "Sleep as training",
+      "zh": "睡眠即训练"
+    },
+    {
+      "en": "Accountability partner",
+      "zh": "训练搭子"
+    },
+    {
+      "en": "Beginner gains",
+      "zh": "新手红利"
+    },
+    {
+      "en": "Long-term athlete",
+      "zh": "长期运动员心态"
+    }
+  ],
+  "extra": {
+    "singapore": [
+      "Hawker food guilt",
+      "Kopi-o kosong",
+      "ActiveSG",
+      "Humidity as excuse",
+      "NSC gym",
+      "Park connector",
+      "Pulau Ubin bike",
+      "Stand-up paddle",
+      "Yoga in Botanic Gardens",
+      "Swimming at public pool",
+      "Seasonal running events",
+      "2.4km IPPT",
+      "Calisthenics at stadium"
+    ],
+    "china": [
+      "广场舞",
+      "瑜伽课",
+      "跑步打卡",
+      "健身房私教",
+      "帕梅拉",
+      "刘畊宏女孩",
+      "体测焦虑",
+      "中医养生",
+      "八段锦",
+      "夜跑",
+      "动感单车",
+      "马甲线",
+      "减脂餐",
+      "轻断食",
+      "Keep App"
+    ]
+  }
+}

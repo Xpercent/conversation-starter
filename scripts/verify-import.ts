@@ -6,12 +6,11 @@
  */
 import { parseDelimited, tableToRows } from '../src/lib/importTopics.ts';
 import { planImport, toCsv } from '../src/lib/mergeTopics.ts';
-import type { Category } from '../src/data/topics.ts';
 import { en } from '../src/i18n/en.ts';
 import { zh } from '../src/i18n/zh.ts';
-import raw from '../src/data/topics.json' with { type: 'json' };
+import { loadShippedBank } from './topicBank.ts';
 
-const defaults = raw as Category[];
+const defaults = loadShippedBank();
 let failures = 0;
 
 function check(label: string, condition: boolean, detail = ''): void {

@@ -1,0 +1,140 @@
+{
+  "id": "nutrition",
+  "emoji": "🥗",
+  "label": {
+    "en": "Nutrition",
+    "zh": "营养"
+  },
+  "base": [
+    {
+      "en": "Empty calories",
+      "zh": "空热量"
+    },
+    {
+      "en": "Protein",
+      "zh": "蛋白质"
+    },
+    {
+      "en": "Hydration",
+      "zh": "补水"
+    },
+    {
+      "en": "Meal prep",
+      "zh": "备餐"
+    },
+    {
+      "en": "Craving vs hunger",
+      "zh": "嘴馋 vs 饥饿"
+    },
+    {
+      "en": "Micronutrients",
+      "zh": "微量营养素"
+    },
+    {
+      "en": "Fiber",
+      "zh": "膳食纤维"
+    },
+    {
+      "en": "Blood sugar spike",
+      "zh": "血糖飙升"
+    },
+    {
+      "en": "Mindful eating",
+      "zh": "正念饮食"
+    },
+    {
+      "en": "Whole foods",
+      "zh": "天然食材"
+    },
+    {
+      "en": "Gut health",
+      "zh": "肠道健康"
+    },
+    {
+      "en": "Cheat meals",
+      "zh": "欺骗餐"
+    },
+    {
+      "en": "Emotional eating",
+      "zh": "情绪化进食"
+    },
+    {
+      "en": "Sustainable deficit",
+      "zh": "可持续热量缺口"
+    },
+    {
+      "en": "Breakfast ritual",
+      "zh": "早餐仪式"
+    },
+    {
+      "en": "Late-night snack",
+      "zh": "宵夜"
+    },
+    {
+      "en": "Ultra-processed",
+      "zh": "超加工食品"
+    },
+    {
+      "en": "Eating enough",
+      "zh": "吃饱"
+    },
+    {
+      "en": "Color on the plate",
+      "zh": "餐盘色彩"
+    },
+    {
+      "en": "Social eating",
+      "zh": "社交聚餐"
+    },
+    {
+      "en": "Meal timing",
+      "zh": "进食时间"
+    },
+    {
+      "en": "Supplements",
+      "zh": "补剂"
+    },
+    {
+      "en": "Home cooking",
+      "zh": "家常菜"
+    },
+    {
+      "en": "Energy availability",
+      "zh": "能量供给"
+    }
+  ],
+  "extra": {
+    "singapore": [
+      "Cai png economics",
+      "Kopi with condensed milk",
+      "Hawker carrot cake",
+      "Prata / fast food guilt",
+      "Fruit juice sugar",
+      "Atas salad bowl",
+      "NTUC fresh veg",
+      "Rice vs cauliflower rice",
+      "Milo dinosaur",
+      "Ice kachang",
+      "Local superfoods (kangkong, papaya)",
+      "Alcohol at hawker centre",
+      "Tze char portions"
+    ],
+    "china": [
+      "外卖",
+      "奶茶",
+      "无糖饮料",
+      "养生壶",
+      "保温杯泡枸杞",
+      "轻食",
+      "代餐",
+      "断碳水",
+      "季节性水果",
+      "火锅文化",
+      "烧烤",
+      "腌菜",
+      "中餐油盐",
+      "食疗",
+      "老火靓汤"
+    ]
+  }
+}
